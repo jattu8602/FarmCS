@@ -105,6 +105,33 @@ $adminUsername = $_SESSION['admin_username'] ?? 'Admin';
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
+        .recent-users-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .export-buttons {
+            display: flex;
+            gap: 10px;
+        }
+        .export-btn {
+            padding: 8px 16px;
+            border-radius: 4px;
+            text-decoration: none;
+            color: white;
+            font-weight: 500;
+            transition: opacity 0.3s;
+        }
+        .export-btn:hover {
+            opacity: 0.9;
+        }
+        .export-excel {
+            background-color: #27ae60;
+        }
+        .export-csv {
+            background-color: #2980b9;
+        }
         .recent-users h2 {
             color: #2c3e50;
             margin-top: 0;
@@ -132,27 +159,6 @@ $adminUsername = $_SESSION['admin_username'] ?? 'Admin';
         }
         .settings-btn {
             background-color: #3498db;
-        }
-        .export-btn {
-            color: white;
-            text-decoration: none;
-            padding: 8px 16px;
-            border-radius: 4px;
-            transition: background-color 0.3s;
-            display: inline-block;
-            margin-left: 10px;
-        }
-        .export-excel {
-            background-color: #27ae60;
-        }
-        .export-excel:hover {
-            background-color: #219a52;
-        }
-        .export-csv {
-            background-color: #3498db;
-        }
-        .export-csv:hover {
-            background-color: #2980b9;
         }
         .empty-message {
             text-align: center;
@@ -258,8 +264,6 @@ $adminUsername = $_SESSION['admin_username'] ?? 'Admin';
         <div class="nav-links">
             <span class="admin-info">Welcome, <?php echo htmlspecialchars($adminUsername); ?></span>
             <a href="change_credentials.php" class="settings-btn">Change Credentials</a>
-            <a href="export_excel.php" class="export-btn export-excel">Export Excel</a>
-            <a href="export_csv.php" class="export-btn export-csv">Export CSV</a>
             <a href="logout.php" class="logout-btn">Logout</a>
         </div>
     </div>
@@ -274,7 +278,13 @@ $adminUsername = $_SESSION['admin_username'] ?? 'Admin';
         </div>
 
         <div class="recent-users">
-            <h2>Recent Registrations</h2>
+            <div class="recent-users-header">
+                <h2>Recent Registrations</h2>
+                <div class="export-buttons">
+                    <a href="export_excel.php" class="export-btn export-excel">Export Excel</a>
+                    <a href="export_csv.php" class="export-btn export-csv">Export CSV</a>
+                </div>
+            </div>
             <?php if ($recentUsers && $recentUsers->num_rows > 0): ?>
                 <table>
                     <thead>

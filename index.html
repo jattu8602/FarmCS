@@ -78,6 +78,10 @@
             gap: 1rem;
         }
 
+        .auth-buttons a {
+            text-decoration: none;
+        }
+
         .btn {
             padding: 0.5rem 1.5rem;
             border-radius: 25px;
@@ -85,6 +89,7 @@
             cursor: pointer;
             font-weight: 500;
             transition: transform 0.3s, box-shadow 0.3s;
+            text-decoration: none;
         }
 
         .btn:hover {
@@ -135,7 +140,7 @@
         /* Features Section */
         .features {
             padding: 5rem 5%;
-            background: var(--light-gray);
+            background: var(--white);
         }
 
         .section-title {
@@ -143,10 +148,17 @@
             margin-bottom: 3rem;
         }
 
+        .section-title h2 {
+            color: var(--primary-green);
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
         .feature-cards {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
+            padding: 0 5%;
         }
 
         .feature-card {
@@ -154,18 +166,62 @@
             padding: 2rem;
             border-radius: 15px;
             text-align: center;
-            transition: transform 0.3s;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            border: 2px solid transparent;
         }
 
         .feature-card:hover {
-            transform: translateY(-10px);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+            border-color: var(--primary-green);
+        }
+
+        .feature-card:hover .feature-icon {
+            transform: scale(1.2);
+            color: var(--primary-green);
+        }
+
+        .feature-card:hover h3 {
+            color: var(--primary-green);
+        }
+
+        .feature-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent, rgba(46, 125, 50, 0.03));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .feature-card:hover:before {
+            opacity: 1;
         }
 
         .feature-icon {
             font-size: 2.5rem;
-            color: var(--primary-green);
+            color: var(--tech-blue);
+            margin-bottom: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .feature-card h3 {
+            color: var(--dark-text);
             margin-bottom: 1rem;
+            font-size: 1.3rem;
+            transition: color 0.3s ease;
+        }
+
+        .feature-card p {
+            color: #666;
+            font-size: 0.9rem;
+            line-height: 1.5;
         }
 
         /* Metrics Section */
@@ -268,9 +324,133 @@
                 grid-template-columns: 1fr;
             }
         }
+
+        /* Popup Styles */
+        .popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .popup-overlay.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .popup {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            position: relative;
+            max-width: 500px;
+            width: 90%;
+            transform: translateY(-20px);
+            transition: transform 0.3s ease;
+        }
+
+        .popup-overlay.show .popup {
+            transform: translateY(0);
+        }
+
+        .popup-close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: var(--light-gray);
+            border: none;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .popup-close:hover {
+            background: #e0e0e0;
+            transform: rotate(90deg);
+        }
+
+        .popup-close::before,
+        .popup-close::after {
+            content: '';
+            position: absolute;
+            width: 15px;
+            height: 2px;
+            background: var(--dark-text);
+        }
+
+        .popup-close::before {
+            transform: rotate(45deg);
+        }
+
+        .popup-close::after {
+            transform: rotate(-45deg);
+        }
+
+        .popup h2 {
+            color: var(--primary-green);
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+            border-right: 2px solid var(--primary-green);
+            white-space: nowrap;
+            overflow: hidden;
+            width: 0;
+            animation: typing 4s steps(20) forwards,
+                       blink 1s infinite;
+        }
+
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+
+        @keyframes blink {
+            50% { border-color: transparent }
+        }
+
+        .popup p {
+            color: var(--dark-text);
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1s ease forwards;
+            animation-delay: 4s; /* Start after slower typing animation */
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
     </style>
 </head>
 <body>
+    <!-- Welcome Popup -->
+    <div class="popup-overlay">
+        <div class="popup">
+            <button class="popup-close" onclick="closePopup()"></button>
+            <h2>Welcome to The FarmCS!</h2>
+            <p>Empowering Indian Farmers with Smart Irrigation Solutions.</p>
+            <p>If you're a FarmCS customer, please <b>log in</b> to access your dashboard and explore real-time data of your fields.</p>
+        </div>
+    </div>
+
     <!-- Navigation -->
     <nav>
         <div class="logo">
@@ -281,7 +461,7 @@
             <a href="#home">Home</a>
             <a href="#features">Features</a>
             <a href="learn-more.html">Learn More</a>
-            <a href="#about">About Us</a>
+            <a href="about.html">About Us</a>
             <a href="contact.html">Contact</a>
         </div>
         <div class="auth-buttons">
@@ -296,7 +476,7 @@
             <h1>Empowering Indian Farmers with Smart Irrigation Solutions</h1>
             <p>Save water, improve yields, and embrace innovation in agriculture with India's first smart sprinkler system.</p>
             <div class="hero-buttons">
-                <a href="#features" class="btn btn-primary">Learn More</a>
+                <a href="learn-more.html" class="btn btn-primary">Learn More</a>
                 <a href="signup.html" class="btn btn-outline">Get Started</a>
             </div>
         </div>
@@ -399,6 +579,9 @@
                     <button class="btn btn-primary">Subscribe</button>
                 </form>
             </div>
+            <div class="footer-section">
+                <p>&copy; 2024 FarmCS. Made with ❤️ in India</p>
+            </div>
         </div>
     </footer>
 
@@ -438,6 +621,27 @@
         });
 
         observer.observe(document.querySelector('.metrics'));
+
+        // Popup functionality
+        function showPopup() {
+            document.querySelector('.popup-overlay').classList.add('show');
+        }
+
+        function closePopup() {
+            document.querySelector('.popup-overlay').classList.remove('show');
+        }
+
+        // Show popup when page loads
+        window.addEventListener('load', () => {
+            setTimeout(showPopup, 1000); // Show popup after 1 second
+        });
+
+        // Close popup when clicking outside
+        document.querySelector('.popup-overlay').addEventListener('click', (e) => {
+            if (e.target.classList.contains('popup-overlay')) {
+                closePopup();
+            }
+        });
     </script>
 </body>
 </html>

@@ -106,26 +106,72 @@
 
         .feature-list {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
             margin: 2rem 0;
         }
 
         .feature-item {
-            background: var(--light-gray);
-            padding: 1.5rem;
-            border-radius: 10px;
-            transition: transform 0.3s;
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            border: 2px solid transparent;
         }
 
         .feature-item:hover {
             transform: translateY(-5px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+            border-color: var(--primary-green);
+        }
+
+        .feature-item:hover i {
+            transform: scale(1.2);
+            color: var(--primary-green);
+        }
+
+        .feature-item:hover h4 {
+            color: var(--primary-green);
+        }
+
+        .feature-item:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent, rgba(46, 125, 50, 0.03));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .feature-item:hover:before {
+            opacity: 1;
         }
 
         .feature-item i {
-            font-size: 2rem;
-            color: var(--primary-green);
+            font-size: 2.5rem;
+            color: var(--tech-blue);
             margin-bottom: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .feature-item h4 {
+            color: var(--dark-text);
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+            transition: color 0.3s ease;
+        }
+
+        .feature-item p {
+            color: #666;
+            font-size: 0.9rem;
+            line-height: 1.5;
         }
 
         .benefits-grid {
@@ -193,8 +239,8 @@
             <a href="index.html">Home</a>
             <a href="index.html#features">Features</a>
             <a href="learn-more.html">Learn More</a>
-            <a href="index.html#about">About Us</a>
-            <a href="index.html#contact">Contact</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact</a>
         </div>
     </nav>
 
@@ -212,11 +258,11 @@
 
             <div class="image-comparison">
                 <div class="comparison-item">
-                    <img src="https://images.unsplash.com/photo-1592982537447-6f2a6a0c7c10?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" alt="Traditional Irrigation">
+                    <img src="https://images.unsplash.com/photo-1519092437326-bfd121eb53ae?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Traditional Irrigation">
                     <h4>Traditional Irrigation</h4>
                 </div>
                 <div class="comparison-item">
-                    <img src="https://images.unsplash.com/photo-1560493676-04071c5f467b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" alt="Smart Irrigation">
+                    <img src="https://plus.unsplash.com/premium_photo-1661875241767-7a587c5b9718?q=80&w=1810&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Smart Irrigation">
                     <h4>Smart Irrigation with FarmCS</h4>
                 </div>
             </div>
@@ -332,5 +378,6 @@
             once: true
         });
     </script>
+    
 </body>
 </html>

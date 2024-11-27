@@ -12,7 +12,7 @@
             --primary-color: #2ecc71;
             --secondary-color: #27ae60;
             --bg-color: #f0f2f5;
-            --text-color: #333;
+            --text-color: #1e2332;
             --shadow-color: rgba(0, 0, 0, 0.1);
         }
 
@@ -22,7 +22,6 @@
             height: 100%;
             width: 100%;
             overflow: hidden;
-            background: linear-gradient(45deg, #f3f4f6, #ffffff);
         }
 
         body {
@@ -31,24 +30,48 @@
             justify-content: center;
             align-items: center;
             perspective: 1000px;
+            background: none;
+            position: relative;
         }
-        
-        .signup-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
+
+        .background-iframe {
+            position: fixed;
+            top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
-            position: relative;
-            z-index: 10;
+            z-index: -1;
+            border: none;
         }
-        
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            z-index: 0;
+            cursor: pointer;
+        }
+
+        .signup-container {
+            position: relative;
+            z-index: 100;
+        }
+
         .signup-card {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.35);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 
+                0 8px 32px rgba(0, 0, 0, 0.1),
+                inset 0 0 0 1px rgba(255, 255, 255, 0.3);
             padding: 2rem;
             border-radius: 25px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
             width: 100%;
             max-width: 400px;
             transform-style: preserve-3d;
@@ -58,46 +81,27 @@
             margin: 20px;
             z-index: 20;
         }
-        
+
         .signup-card::before {
             content: '';
             position: absolute;
             inset: -10px;
             border-radius: 35px;
             background: linear-gradient(135deg, 
-                rgba(46, 204, 113, 0.2) 0%,
-                rgba(39, 174, 96, 0.2) 100%
+                rgba(46, 204, 113, 0.3) 0%,
+                rgba(39, 174, 96, 0.3) 100%
             );
             opacity: 0;
             transition: opacity 0.5s ease;
             z-index: -1;
         }
 
-        .signup-card:hover::before {
-            opacity: 1;
-        }
-
-        .signup-card::after {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(
-                circle,
-                rgba(255, 255, 255, 0.8) 0%,
-                transparent 80%
-            );
-            opacity: 0;
-            transition: opacity 0.5s ease;
-            pointer-events: none;
-            z-index: 1;
-            mix-blend-mode: soft-light;
-        }
-
-        .signup-card:hover::after {
-            opacity: 0.5;
+        .signup-card:hover {
+            background: rgba(255, 255, 255, 0.85);
+            transform: translateY(-5px);
+            box-shadow: 
+                0 15px 45px rgba(0, 0, 0, 0.2),
+                inset 0 0 0 1px rgba(255, 255, 255, 0.4);
         }
 
         .signup-header {
@@ -115,19 +119,19 @@
         }
 
         .signup-header h1 {
-            color: var(--text-color);
+            color: #000000;
             font-size: 20px;
             font-weight: 600;
             margin: 0 0 5px;
             transform: translateZ(20px);
+            text-shadow: 0 1px 2px rgba(255, 255, 255, 0.5);
         }
 
         .signup-header p {
-            color: var(--text-color);
-            opacity: 0.8;
-            margin: 0;
-            font-size: 13px;
-            transform: translateZ(15px);
+            color: #1e2332;
+            font-weight: 500;
+            opacity: 0.9;
+            text-shadow: 0 1px 1px rgba(255, 255, 255, 0.5);
         }
         
         .signup-form {
@@ -148,20 +152,21 @@
             padding: 8px 10px;
             border: 2px solid transparent;
             border-radius: 10px;
-            background: rgba(255, 255, 255, 0.9);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            background: rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
             font-size: 14px;
-            font-weight: 400;
+            font-weight: 500;
             font-family: 'Poppins', sans-serif;
-            color: var(--text-color);
+            color: #000000;
             transition: all 0.3s ease;
         }
 
         .signup-form input::placeholder,
         .signup-form select::placeholder {
-            color: #9ca3af;
+            color: rgba(0, 0, 0, 0.7);
             font-size: 13px;
-            font-weight: 400;
+            font-weight: 500;
         }
 
         .signup-form input:focus,
@@ -170,6 +175,7 @@
             border-color: var(--primary-color);
             transform: translateZ(5px);
             box-shadow: 0 8px 20px rgba(46, 204, 113, 0.2);
+            background: rgba(255, 255, 255, 0.65);
         }
         
         .signup-btn {
@@ -177,10 +183,11 @@
             padding: 8px;
             background: var(--primary-color);
             color: white;
+            font-weight: 600;
+            text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
             border: none;
             border-radius: 10px;
             font-size: 14px;
-            font-weight: 600;
             cursor: pointer;
             transform: translateZ(15px);
             transition: all 0.3s ease;
@@ -192,8 +199,6 @@
         
         .signup-btn:hover {
             background: var(--secondary-color);
-            transform: translateZ(25px);
-            box-shadow: 0 8px 25px rgba(46, 204, 113, 0.4);
         }
 
         .login-link {
@@ -202,60 +207,31 @@
             font-size: 13px;
             transform: translateZ(10px);
             transition: transform 0.3s ease;
-            color: var(--text-color);
-            font-family: 'Poppins', sans-serif;
+            color: #1e2332;
+            font-weight: 500;
         }
 
         .login-link a {
             color: var(--primary-color);
+            font-weight: 600;
+            text-shadow: 0 1px 1px rgba(255, 255, 255, 0.5);
             text-decoration: none;
-            font-weight: 500;
             transition: color 0.3s ease;
             margin-left: 5px;
         }
 
+        .login-link a:hover {
+            color: var(--secondary-color);
+        }
+
         .error-message {
-            color: #dc2626;
+            color: #d32f2f;
             font-size: 13px;
-            font-weight: 400;
+            font-weight: 500;
             margin-top: 4px;
             display: none;
             transform: translateZ(5px);
-        }
-
-        .background-shapes {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 1;
-            pointer-events: none;
-            overflow: hidden;
-        }
-
-        .shape {
-            position: absolute;
-            background: linear-gradient(45deg, rgba(46, 204, 113, 0.1), rgba(39, 174, 96, 0.1));
-            border-radius: 50%;
-            animation: float 10s infinite ease-in-out;
-            pointer-events: none;
-        }
-
-        .shape:nth-child(1) {
-            width: 400px;
-            height: 400px;
-            top: -200px;
-            right: -200px;
-            animation-delay: 0s;
-        }
-
-        .shape:nth-child(2) {
-            width: 300px;
-            height: 300px;
-            bottom: -150px;
-            left: -150px;
-            animation-delay: -5s;
+            text-shadow: 0 1px 1px rgba(255, 255, 255, 0.5);
         }
 
         @keyframes float {
@@ -305,7 +281,9 @@
             padding: 12px 15px;
             border: 2px solid transparent;
             border-radius: 10px;
-            background: rgba(255, 255, 255, 0.9);
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
             font-size: 14px;
             color: var(--text-color);
             transition: all 0.3s ease;
@@ -317,7 +295,7 @@
             border-color: var(--primary-color);
             outline: none;
             box-shadow: 0 5px 20px rgba(46, 204, 113, 0.15);
-            background: #fff;
+            background: rgba(255, 255, 255, 0.2);
         }
 
         .form-group input::placeholder {
@@ -325,120 +303,42 @@
             opacity: 0.8;
             font-size: 13px;
         }
+
+        .footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: #f0f2f5;
+            padding: 10px;
+            text-align: center;
+            font-size: 13px;
+            color: #1e2332;
+            font-weight: 500;
+            border-top: 1px solid #e5e5e5;
+            z-index: 1000;
+        }
+
+        .footer-content {
+            margin: 0 auto;
+            max-width: 400px;
+        }
     </style>
-</head>
-<body>
-    <div class="background-shapes">
-        <div class="shape"></div>
-        <div class="shape"></div>
-    </div>
-    <div class="signup-container">
-        <div class="signup-card">
-            <div class="signup-header">
-                <img src="images/FarmCSlogo.png" alt="FarmCS Logo">
-                <h1>Create Account</h1>
-                <p>Join FarmCS Smart Farming Platform</p>
-            </div>
-            <form class="signup-form" id="signupForm">
-                <div class="form-row">
-                    <div class="form-group">
-                        <input type="text" id="firstName" placeholder="First Name" required>
-                        <div class="error-message" id="firstNameError"></div>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" id="lastName" placeholder="Last Name" required>
-                        <div class="error-message" id="lastNameError"></div>
-                    </div>
-                </div>
-                
-                <div class="form-group">
-                    <input type="email" id="email" placeholder="Email Address" required>
-                    <div class="error-message" id="emailError"></div>
-                </div>
-
-                <div class="form-row">
-                    <div class="form-group">
-                        <input type="password" id="password" placeholder="Password" required>
-                        <div class="error-message" id="passwordError"></div>
-                    </div>
-                    <div class="form-group">
-                        <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
-                        <div class="error-message" id="confirmPasswordError"></div>
-                    </div>
-                </div>
-
-                <div class="form-row">
-                    <div class="form-group">
-                        <select id="state" required onchange="loadDistricts()">
-                            <option value="">Select State</option>
-                            <option value="Andhra Pradesh">Andhra Pradesh</option>
-                            <option value="Arunachal Pradesh">Arunachal Pradesh</option>
-                            <option value="Assam">Assam</option>
-                            <option value="Bihar">Bihar</option>
-                            <option value="Chhattisgarh">Chhattisgarh</option>
-                            <option value="Goa">Goa</option>
-                            <option value="Gujarat">Gujarat</option>
-                            <option value="Haryana">Haryana</option>
-                            <option value="Himachal Pradesh">Himachal Pradesh</option>
-                            <option value="Jharkhand">Jharkhand</option>
-                            <option value="Karnataka">Karnataka</option>
-                            <option value="Kerala">Kerala</option>
-                            <option value="Madhya Pradesh">Madhya Pradesh</option>
-                            <option value="Maharashtra">Maharashtra</option>
-                            <option value="Manipur">Manipur</option>
-                            <option value="Meghalaya">Meghalaya</option>
-                            <option value="Mizoram">Mizoram</option>
-                            <option value="Nagaland">Nagaland</option>
-                            <option value="Odisha">Odisha</option>
-                            <option value="Punjab">Punjab</option>
-                            <option value="Rajasthan">Rajasthan</option>
-                            <option value="Sikkim">Sikkim</option>
-                            <option value="Tamil Nadu">Tamil Nadu</option>
-                            <option value="Telangana">Telangana</option>
-                            <option value="Tripura">Tripura</option>
-                            <option value="Uttar Pradesh">Uttar Pradesh</option>
-                            <option value="Uttarakhand">Uttarakhand</option>
-                            <option value="West Bengal">West Bengal</option>
-                        </select>
-                        <div class="error-message" id="stateError"></div>
-                    </div>
-                    <div class="form-group">
-                        <select id="district" required disabled>
-                            <option value="">Select District</option>
-                        </select>
-                        <div class="error-message" id="districtError"></div>
-                    </div>
-                </div>
-
-                <div class="form-row">
-                    <div class="form-group">
-                        <select id="farmType" required>
-                            <option value="">Select Farm Type</option>
-                            <option value="crop">Crop Farming</option>
-                            <option value="livestock">Livestock Farming</option>
-                            <option value="mixed">Mixed Farming</option>
-                            <option value="organic">Organic Farming</option>
-                            <option value="greenhouse">Greenhouse</option>
-                        </select>
-                        <div class="error-message" id="farmTypeError"></div>
-                    </div>
-                    <div class="form-group">
-                        <input type="number" id="farmSize" placeholder="Farm Size (acres)" required>
-                        <div class="error-message" id="farmSizeError"></div>
-                    </div>
-                </div>
-
-                <button type="submit" class="signup-btn">Create Account</button>
-                
-                <div class="login-link">
-                    Already have an account? <a href="login.html" class="page-transition">Login here</a>
-                </div>
-            </form>
-        </div>
-    </div>
-
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            const overlay = document.querySelector('.overlay');
+            const signupContainer = document.querySelector('.signup-container');
+            
+            document.body.addEventListener('click', function(e) {
+                if (!signupContainer.contains(e.target)) {
+                    window.location.href = 'index.html';
+                }
+            });
+            
+            signupContainer.addEventListener('click', function(e) {
+                e.stopPropagation();
+            });
+            
             // Add transition effect when clicking on login link
             document.querySelector('.page-transition').addEventListener('click', function(e) {
                 e.preventDefault();
@@ -671,5 +571,116 @@
             floatingAnimation();
         }
     </script>
+</head>
+<body>
+    <iframe src="index.html" class="background-iframe" title="Background"></iframe>
+    <div class="overlay"></div>
+    <div class="signup-container">
+        <div class="signup-card">
+            <div class="signup-header">
+                <img src="images/FarmCSlogo.png" alt="FarmCS Logo">
+                <h1>Create Account</h1>
+                <p>Join FarmCS Smart Farming Platform</p>
+            </div>
+            <form class="signup-form" id="signupForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <input type="text" id="firstName" placeholder="First Name" required>
+                        <div class="error-message" id="firstNameError"></div>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="lastName" placeholder="Last Name" required>
+                        <div class="error-message" id="lastNameError"></div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <input type="email" id="email" placeholder="Email Address" required>
+                    <div class="error-message" id="emailError"></div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <input type="password" id="password" placeholder="Password" required>
+                        <div class="error-message" id="passwordError"></div>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
+                        <div class="error-message" id="confirmPasswordError"></div>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <select id="state" required onchange="loadDistricts()">
+                            <option value="">Select State</option>
+                            <option value="Andhra Pradesh">Andhra Pradesh</option>
+                            <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                            <option value="Assam">Assam</option>
+                            <option value="Bihar">Bihar</option>
+                            <option value="Chhattisgarh">Chhattisgarh</option>
+                            <option value="Goa">Goa</option>
+                            <option value="Gujarat">Gujarat</option>
+                            <option value="Haryana">Haryana</option>
+                            <option value="Himachal Pradesh">Himachal Pradesh</option>
+                            <option value="Jharkhand">Jharkhand</option>
+                            <option value="Karnataka">Karnataka</option>
+                            <option value="Kerala">Kerala</option>
+                            <option value="Madhya Pradesh">Madhya Pradesh</option>
+                            <option value="Maharashtra">Maharashtra</option>
+                            <option value="Manipur">Manipur</option>
+                            <option value="Meghalaya">Meghalaya</option>
+                            <option value="Mizoram">Mizoram</option>
+                            <option value="Nagaland">Nagaland</option>
+                            <option value="Odisha">Odisha</option>
+                            <option value="Punjab">Punjab</option>
+                            <option value="Rajasthan">Rajasthan</option>
+                            <option value="Sikkim">Sikkim</option>
+                            <option value="Tamil Nadu">Tamil Nadu</option>
+                            <option value="Telangana">Telangana</option>
+                            <option value="Tripura">Tripura</option>
+                            <option value="Uttar Pradesh">Uttar Pradesh</option>
+                            <option value="Uttarakhand">Uttarakhand</option>
+                            <option value="West Bengal">West Bengal</option>
+                        </select>
+                        <div class="error-message" id="stateError"></div>
+                    </div>
+                    <div class="form-group">
+                        <select id="district" required disabled>
+                            <option value="">Select District</option>
+                        </select>
+                        <div class="error-message" id="districtError"></div>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <select id="farmType" required>
+                            <option value="">Select Farm Type</option>
+                            <option value="crop">Crop Farming</option>
+                            <option value="livestock">Livestock Farming</option>
+                            <option value="mixed">Mixed Farming</option>
+                            <option value="organic">Organic Farming</option>
+                            <option value="greenhouse">Greenhouse</option>
+                        </select>
+                        <div class="error-message" id="farmTypeError"></div>
+                    </div>
+                    <div class="form-group">
+                        <input type="number" id="farmSize" placeholder="Farm Size (acres)" required>
+                        <div class="error-message" id="farmSizeError"></div>
+                    </div>
+                </div>
+
+                <button type="submit" class="signup-btn">Create Account</button>
+                
+                <div class="login-link">
+                    Already have an account? <a href="login.html" class="page-transition">Login here</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 </body>
 </html>

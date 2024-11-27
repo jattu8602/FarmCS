@@ -101,3 +101,25 @@ body {
     color: #9ca3af;
     font-size: 13px;
 }
+
+.footer {
+    background-color: #f8f9fa;
+    padding: 1rem 0;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    border-top: 1px solid #dee2e6;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.footer p {
+    margin: 0;
+    color: #6c757d;
+    font-size: 0.9rem;
+}
