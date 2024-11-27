@@ -1,0 +1,115 @@
+[26-Nov-2024 02:59:27 Europe/Berlin] PHP Warning:  The magic method Database::__wakeup() must have public visibility in C:\Users\abhis\Desktop\FarmCS Website\config\database.php on line 84
+[26-Nov-2024 02:59:27 Europe/Berlin] Received login attempt for email: test@example.com
+[26-Nov-2024 02:59:27 Europe/Berlin] Available columns: id, firstName, lastName, email, password, state, district, farmType, farmSize, created_at, updated_at
+[26-Nov-2024 02:59:27 Europe/Berlin] Executing query: SELECT id, password_hash, first_name, last_name, state, district, farm_type, farm_size 
+                FROM users 
+                WHERE email = ? AND is_active = 1 
+                LIMIT 1 with email: test@example.com
+[26-Nov-2024 02:59:27 Europe/Berlin] Query Error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'password_hash' in 'field list' SQL: SELECT id, password_hash, first_name, last_name, state, district, farm_type, farm_size 
+                FROM users 
+                WHERE email = ? AND is_active = 1 
+                LIMIT 1
+[26-Nov-2024 02:59:27 Europe/Berlin] Fetch Error: Query Error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'password_hash' in 'field list'
+[26-Nov-2024 02:59:27 Europe/Berlin] Query error: Fetch Error: Query Error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'password_hash' in 'field list'
+[26-Nov-2024 03:01:14 Europe/Berlin] PHP Warning:  The magic method Database::__wakeup() must have public visibility in C:\Users\abhis\Desktop\FarmCS Website\config\database.php on line 84
+[26-Nov-2024 03:01:14 Europe/Berlin] Received login attempt for email: test@example.com
+[26-Nov-2024 03:01:14 Europe/Berlin] Query Error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'first_name' in 'field list' SQL: 
+                INSERT INTO users (email, password, first_name, last_name, state, district, farm_type, farm_size) 
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+[26-Nov-2024 03:01:14 Europe/Berlin] Query error: Query Error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'first_name' in 'field list'
+[26-Nov-2024 03:01:15 Europe/Berlin] PHP Warning:  The magic method Database::__wakeup() must have public visibility in C:\Users\abhis\Desktop\FarmCS Website\config\database.php on line 84
+[26-Nov-2024 03:01:15 Europe/Berlin] Received login attempt for email: test@example.com
+[26-Nov-2024 03:01:15 Europe/Berlin] Query Error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'first_name' in 'field list' SQL: 
+                INSERT INTO users (email, password, first_name, last_name, state, district, farm_type, farm_size) 
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+[26-Nov-2024 03:01:15 Europe/Berlin] Query error: Query Error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'first_name' in 'field list'
+[26-Nov-2024 03:01:16 Europe/Berlin] PHP Warning:  The magic method Database::__wakeup() must have public visibility in C:\Users\abhis\Desktop\FarmCS Website\config\database.php on line 84
+[26-Nov-2024 03:01:16 Europe/Berlin] Received login attempt for email: test@example.com
+[26-Nov-2024 03:01:16 Europe/Berlin] Query Error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'first_name' in 'field list' SQL: 
+                INSERT INTO users (email, password, first_name, last_name, state, district, farm_type, farm_size) 
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+[26-Nov-2024 03:01:16 Europe/Berlin] Query error: Query Error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'first_name' in 'field list'
+[26-Nov-2024 03:01:16 Europe/Berlin] PHP Warning:  The magic method Database::__wakeup() must have public visibility in C:\Users\abhis\Desktop\FarmCS Website\config\database.php on line 84
+[26-Nov-2024 03:01:16 Europe/Berlin] Received login attempt for email: test@example.com
+[26-Nov-2024 03:01:16 Europe/Berlin] Query Error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'first_name' in 'field list' SQL: 
+                INSERT INTO users (email, password, first_name, last_name, state, district, farm_type, farm_size) 
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+[26-Nov-2024 03:01:16 Europe/Berlin] Query error: Query Error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'first_name' in 'field list'
+[26-Nov-2024 03:01:16 Europe/Berlin] PHP Warning:  The magic method Database::__wakeup() must have public visibility in C:\Users\abhis\Desktop\FarmCS Website\config\database.php on line 84
+[26-Nov-2024 03:01:16 Europe/Berlin] Received login attempt for email: test@example.com
+[26-Nov-2024 03:01:16 Europe/Berlin] Query Error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'first_name' in 'field list' SQL: 
+                INSERT INTO users (email, password, first_name, last_name, state, district, farm_type, farm_size) 
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+[26-Nov-2024 03:01:16 Europe/Berlin] Query error: Query Error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'first_name' in 'field list'
+[26-Nov-2024 03:01:17 Europe/Berlin] PHP Warning:  The magic method Database::__wakeup() must have public visibility in C:\Users\abhis\Desktop\FarmCS Website\config\database.php on line 84
+[26-Nov-2024 03:01:17 Europe/Berlin] Received login attempt for email: test@example.com
+[26-Nov-2024 03:01:17 Europe/Berlin] Query Error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'first_name' in 'field list' SQL: 
+                INSERT INTO users (email, password, first_name, last_name, state, district, farm_type, farm_size) 
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+[26-Nov-2024 03:01:17 Europe/Berlin] Query error: Query Error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'first_name' in 'field list'
+[26-Nov-2024 03:01:17 Europe/Berlin] PHP Warning:  The magic method Database::__wakeup() must have public visibility in C:\Users\abhis\Desktop\FarmCS Website\config\database.php on line 84
+[26-Nov-2024 03:01:17 Europe/Berlin] Received login attempt for email: test@example.com
+[26-Nov-2024 03:01:17 Europe/Berlin] Query Error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'first_name' in 'field list' SQL: 
+                INSERT INTO users (email, password, first_name, last_name, state, district, farm_type, farm_size) 
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+[26-Nov-2024 03:01:17 Europe/Berlin] Query error: Query Error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'first_name' in 'field list'
+[26-Nov-2024 03:01:20 Europe/Berlin] PHP Warning:  The magic method Database::__wakeup() must have public visibility in C:\Users\abhis\Desktop\FarmCS Website\config\database.php on line 84
+[26-Nov-2024 03:01:20 Europe/Berlin] Received login attempt for email: abhishekmaurya14112002@gmail.com
+[26-Nov-2024 03:01:20 Europe/Berlin] Query Error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'first_name' in 'field list' SQL: 
+                INSERT INTO users (email, password, first_name, last_name, state, district, farm_type, farm_size) 
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+[26-Nov-2024 03:01:20 Europe/Berlin] Query error: Query Error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'first_name' in 'field list'
+[26-Nov-2024 03:01:28 Europe/Berlin] PHP Warning:  The magic method Database::__wakeup() must have public visibility in C:\Users\abhis\Desktop\FarmCS Website\config\database.php on line 84
+[26-Nov-2024 03:01:28 Europe/Berlin] Received login attempt for email: abhishekmaurya14112002@gmail.com
+[26-Nov-2024 03:01:28 Europe/Berlin] Query Error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'first_name' in 'field list' SQL: 
+                INSERT INTO users (email, password, first_name, last_name, state, district, farm_type, farm_size) 
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+[26-Nov-2024 03:01:28 Europe/Berlin] Query error: Query Error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'first_name' in 'field list'
+[26-Nov-2024 03:01:53 Europe/Berlin] PHP Warning:  The magic method Database::__wakeup() must have public visibility in C:\Users\abhis\Desktop\FarmCS Website\config\database.php on line 84
+[26-Nov-2024 03:01:53 Europe/Berlin] Received login attempt for email: abhishekmaurya14112002@gmail.com
+[26-Nov-2024 03:01:53 Europe/Berlin] Executing query: SELECT id, password, first_name, last_name, state, district, farm_type, farm_size 
+                FROM users 
+                WHERE email = ? AND is_active = 1 
+                LIMIT 1 with email: abhishekmaurya14112002@gmail.com
+[26-Nov-2024 03:01:53 Europe/Berlin] Query Error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'first_name' in 'field list' SQL: SELECT id, password, first_name, last_name, state, district, farm_type, farm_size 
+                FROM users 
+                WHERE email = ? AND is_active = 1 
+                LIMIT 1
+[26-Nov-2024 03:01:53 Europe/Berlin] Fetch Error: Query Error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'first_name' in 'field list'
+[26-Nov-2024 03:01:53 Europe/Berlin] Query error: Fetch Error: Query Error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'first_name' in 'field list'
+[26-Nov-2024 03:03:01 Europe/Berlin] PHP Warning:  The magic method Database::__wakeup() must have public visibility in C:\Users\abhis\Desktop\FarmCS Website\config\database.php on line 84
+[26-Nov-2024 03:03:01 Europe/Berlin] Received login attempt for email: abhishekmaurya14112002@gmail.com
+[26-Nov-2024 03:03:01 Europe/Berlin] Executing query: SELECT id, password, first_name, last_name, state, district, farm_type, farm_size 
+                FROM users 
+                WHERE email = ? AND is_active = 1 
+                LIMIT 1 with email: abhishekmaurya14112002@gmail.com
+[26-Nov-2024 03:03:01 Europe/Berlin] Query Error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'first_name' in 'field list' SQL: SELECT id, password, first_name, last_name, state, district, farm_type, farm_size 
+                FROM users 
+                WHERE email = ? AND is_active = 1 
+                LIMIT 1
+[26-Nov-2024 03:03:01 Europe/Berlin] Fetch Error: Query Error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'first_name' in 'field list'
+[26-Nov-2024 03:03:01 Europe/Berlin] Query error: Fetch Error: Query Error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'first_name' in 'field list'
+[26-Nov-2024 03:03:06 Europe/Berlin] PHP Warning:  The magic method Database::__wakeup() must have public visibility in C:\Users\abhis\Desktop\FarmCS Website\config\database.php on line 84
+[26-Nov-2024 03:03:06 Europe/Berlin] Received login attempt for email: abhishekmaurya14112002@gmail.com
+[26-Nov-2024 03:03:06 Europe/Berlin] Executing query: SELECT id, password, first_name, last_name, state, district, farm_type, farm_size 
+                FROM users 
+                WHERE email = ? AND is_active = 1 
+                LIMIT 1 with email: abhishekmaurya14112002@gmail.com
+[26-Nov-2024 03:03:06 Europe/Berlin] Query Error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'first_name' in 'field list' SQL: SELECT id, password, first_name, last_name, state, district, farm_type, farm_size 
+                FROM users 
+                WHERE email = ? AND is_active = 1 
+                LIMIT 1
+[26-Nov-2024 03:03:06 Europe/Berlin] Fetch Error: Query Error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'first_name' in 'field list'
+[26-Nov-2024 03:03:06 Europe/Berlin] Query error: Fetch Error: Query Error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'first_name' in 'field list'
+[26-Nov-2024 03:03:26 Europe/Berlin] PHP Warning:  The magic method Database::__wakeup() must have public visibility in C:\Users\abhis\Desktop\FarmCS Website\config\database.php on line 84
+[26-Nov-2024 03:03:26 Europe/Berlin] Received login attempt for email: abhishekmaurya14112002@gmail.com
+[26-Nov-2024 03:03:26 Europe/Berlin] Executing query: SELECT id, password, first_name, last_name, state, district, farm_type, farm_size 
+                FROM users 
+                WHERE email = ? AND is_active = 1 
+                LIMIT 1 with email: abhishekmaurya14112002@gmail.com
+[26-Nov-2024 03:03:26 Europe/Berlin] Query Error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'first_name' in 'field list' SQL: SELECT id, password, first_name, last_name, state, district, farm_type, farm_size 
+                FROM users 
+                WHERE email = ? AND is_active = 1 
+                LIMIT 1
+[26-Nov-2024 03:03:26 Europe/Berlin] Fetch Error: Query Error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'first_name' in 'field list'
+[26-Nov-2024 03:03:26 Europe/Berlin] Query error: Fetch Error: Query Error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'first_name' in 'field list'

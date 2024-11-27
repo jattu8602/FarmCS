@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn More - FarmCS</title>
+    <link rel="icon" type="image/png" href="images/FarmCSlogo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <style>
+        :root {
+            --primary-green: #2E7D32;
+            --secondary-green: #4CAF50;
+            --accent-orange: #FF6B35;
+            --tech-blue: #1976D2;
+            --white: #ffffff;
+            --light-gray: #f5f5f5;
+            --dark-text: #333333;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: var(--white);
+            color: var(--dark-text);
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo img {
+            height: 40px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--dark-text);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-green);
+        }
+
+        /* Learn More Content */
+        .learn-more-container {
+            padding: 100px 5% 50px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .page {
+            margin-bottom: 4rem;
+            padding: 2rem;
+            background: var(--white);
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .page h2 {
+            color: var(--primary-green);
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .page h3 {
+            color: var(--tech-blue);
+            font-size: 1.8rem;
+            margin: 1.5rem 0 1rem;
+        }
+
+        .page p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .feature-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .feature-item {
+            background: var(--light-gray);
+            padding: 1.5rem;
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+
+        .feature-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-item i {
+            font-size: 2rem;
+            color: var(--primary-green);
+            margin-bottom: 1rem;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .benefit-item {
+            text-align: center;
+            padding: 1.5rem;
+            background: var(--light-gray);
+            border-radius: 10px;
+        }
+
+        .timeline {
+            position: relative;
+            margin: 2rem 0;
+            padding: 2rem 0;
+        }
+
+        .timeline-item {
+            margin-bottom: 2rem;
+            padding-left: 2rem;
+            border-left: 3px solid var(--primary-green);
+        }
+
+        .image-comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .comparison-item {
+            text-align: center;
+        }
+
+        .comparison-item img {
+            max-width: 100%;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .image-comparison {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">
+            <img src="images/FarmCSlogo.png" alt="FarmCS Logo">
+            <span>FarmCS</span>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="index.html#features">Features</a>
+            <a href="learn-more.html">Learn More</a>
+            <a href="index.html#about">About Us</a>
+            <a href="index.html#contact">Contact</a>
+        </div>
+    </nav>
+
+    <div class="learn-more-container">
+        <!-- Page 1: Introduction -->
+        <section class="page" data-aos="fade-up">
+            <h2>Revolutionizing Agriculture with IoT</h2>
+            <p>FarmCS is an innovative IoT-enabled smart irrigation system designed to optimize water usage, improve crop yields, and enhance the efficiency of farming operations. By combining technology with sustainable practices, FarmCS empowers farmers to make data-driven decisions and reduce resource wastage.</p>
+            
+            <h3>Our Vision</h3>
+            <p>Our vision is to transform agriculture by integrating cutting-edge technologies, ensuring sustainable farming practices that promote environmental and economic prosperity.</p>
+
+            <h3>The Challenge</h3>
+            <p>Traditional irrigation methods often lead to inefficiencies such as over-irrigation, water wastage, and labor-intensive processes. FarmCS addresses these challenges by providing a smart sprinkler system that operates dynamically based on real-time data, ensuring optimal irrigation.</p>
+
+            <div class="image-comparison">
+                <div class="comparison-item">
+                    <img src="https://images.unsplash.com/photo-1592982537447-6f2a6a0c7c10?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" alt="Traditional Irrigation">
+                    <h4>Traditional Irrigation</h4>
+                </div>
+                <div class="comparison-item">
+                    <img src="https://images.unsplash.com/photo-1560493676-04071c5f467b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" alt="Smart Irrigation">
+                    <h4>Smart Irrigation with FarmCS</h4>
+                </div>
+            </div>
+        </section>
+
+        <!-- Page 2: How FarmCS Works -->
+        <section class="page" data-aos="fade-up">
+            <h2>IoT-Enabled Smart Irrigation: A Game Changer</h2>
+            <div class="feature-list">
+                <div class="feature-item">
+                    <i class="fas fa-tint"></i>
+                    <h4>Real-Time Soil Moisture Sensing</h4>
+                    <p>Continuously monitors soil conditions to ensure precise irrigation</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-robot"></i>
+                    <h4>Automated Operation</h4>
+                    <p>Dynamic adjustments based on real-time data, eliminating manual intervention</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-sliders-h"></i>
+                    <h4>Customizable Sprinkler System</h4>
+                    <p>Tailored water distribution for diverse crop types and growth stages</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-flask"></i>
+                    <h4>Integrated Fertilization</h4>
+                    <p>Dispenses liquid fertilizers automatically, protecting farmers from harmful exposure</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Page 3: Key Innovations & Benefits -->
+        <section class="page" data-aos="fade-up">
+            <h2>Smarter Farming, Sustainable Future</h2>
+            <h3>Key Innovations</h3>
+            <div class="feature-list">
+                <div class="feature-item">
+                    <i class="fas fa-microchip"></i>
+                    <h4>IoT Integration</h4>
+                    <p>Seamless sensor-to-sprinkler communication</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-solar-panel"></i>
+                    <h4>Solar Powered</h4>
+                    <p>Energy-efficient operations powered by solar panels</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-dove"></i>
+                    <h4>Bird Deterrence</h4>
+                    <p>Eco-friendly sound systems for crop protection</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-fire-extinguisher"></i>
+                    <h4>Fire Detection</h4>
+                    <p>360° cameras for early fire detection and prevention</p>
+                </div>
+            </div>
+
+            <h3>Benefits to Farmers</h3>
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <i class="fas fa-chart-line"></i>
+                    <h4>Enhanced Yields</h4>
+                    <p>Optimize irrigation for better crop production</p>
+                </div>
+                <div class="benefit-item">
+                    <i class="fas fa-coins"></i>
+                    <h4>Cost Savings</h4>
+                    <p>Reduce water and fertilizer usage</p>
+                </div>
+                <div class="benefit-item">
+                    <i class="fas fa-user-shield"></i>
+                    <h4>Protection</h4>
+                    <p>Guard against hazards and crop damage</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Page 4: Future Scope -->
+        <section class="page" data-aos="fade-up">
+            <h2>Advancing Agriculture Through Technology</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h4>Advanced Sensor Technologies</h4>
+                    <p>Drone-based monitoring for comprehensive field analysis</p>
+                </div>
+                <div class="timeline-item">
+                    <h4>AI Integration</h4>
+                    <p>Machine learning for predictive irrigation and schedule optimization</p>
+                </div>
+                <div class="timeline-item">
+                    <h4>Weather Integration</h4>
+                    <p>Real-time weather forecasting for dynamic irrigation adjustment</p>
+                </div>
+                <div class="timeline-item">
+                    <h4>Blockchain Implementation</h4>
+                    <p>Secure record-keeping and supply chain traceability</p>
+                </div>
+            </div>
+
+            <div class="conclusion" style="text-align: center; margin-top: 3rem;">
+                <h3>Join Us in Shaping the Future of Agriculture</h3>
+                <p>FarmCS is not just a product; it's a movement towards sustainable farming. By integrating IoT and renewable energy, we aim to create a future where technology works hand-in-hand with nature, empowering farmers and protecting resources.</p>
+            </div>
+        </section>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+    </script>
+</body>
+</html>

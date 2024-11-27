@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - FarmCS</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        :root {
+            --primary-color: #2ecc71;
+            --secondary-color: #27ae60;
+            --bg-color: #f0f2f5;
+            --text-color: #333;
+            --shadow-color: rgba(0, 0, 0, 0.1);
+        }
+
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+            background: linear-gradient(45deg, #f3f4f6, #ffffff);
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            perspective: 1000px;
+        }
+        
+        .signup-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            position: relative;
+            z-index: 10;
+        }
+        
+        .signup-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 25px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            transform-style: preserve-3d;
+            transform: translateZ(0);
+            transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+            position: relative;
+            margin: 20px;
+            z-index: 20;
+        }
+        
+        .signup-card::before {
+            content: '';
+            position: absolute;
+            inset: -10px;
+            border-radius: 35px;
+            background: linear-gradient(135deg, 
+                rgba(46, 204, 113, 0.2) 0%,
+                rgba(39, 174, 96, 0.2) 100%
+            );
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            z-index: -1;
+        }
+
+        .signup-card:hover::before {
+            opacity: 1;
+        }
+
+        .signup-card::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(
+                circle,
+                rgba(255, 255, 255, 0.8) 0%,
+                transparent 80%
+            );
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            pointer-events: none;
+            z-index: 1;
+            mix-blend-mode: soft-light;
+        }
+
+        .signup-card:hover::after {
+            opacity: 0.5;
+        }
+
+        .signup-header {
+            text-align: center;
+            margin-bottom: 20px;
+            transform-style: preserve-3d;
+        }
+        
+        .signup-header img {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 15px;
+            transform: translateZ(30px);
+            transition: transform 0.3s ease;
+        }
+
+        .signup-header h1 {
+            color: var(--text-color);
+            font-size: 20px;
+            font-weight: 600;
+            margin: 0 0 5px;
+            transform: translateZ(20px);
+        }
+
+        .signup-header p {
+            color: var(--text-color);
+            opacity: 0.8;
+            margin: 0;
+            font-size: 13px;
+            transform: translateZ(15px);
+        }
+        
+        .signup-form {
+            display: grid;
+            gap: 8px;
+            transform-style: preserve-3d;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 10px;
+        }
+        
+        .signup-form input,
+        .signup-form select {
+            width: 100%;
+            padding: 8px 10px;
+            border: 2px solid transparent;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            font-size: 14px;
+            font-weight: 400;
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-color);
+            transition: all 0.3s ease;
+        }
+
+        .signup-form input::placeholder,
+        .signup-form select::placeholder {
+            color: #9ca3af;
+            font-size: 13px;
+            font-weight: 400;
+        }
+
+        .signup-form input:focus,
+        .signup-form select:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            transform: translateZ(5px);
+            box-shadow: 0 8px 20px rgba(46, 204, 113, 0.2);
+        }
+        
+        .signup-btn {
+            width: 100%;
+            padding: 8px;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transform: translateZ(15px);
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(46, 204, 113, 0.3);
+            margin-top: 10px;
+            letter-spacing: 0.5px;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .signup-btn:hover {
+            background: var(--secondary-color);
+            transform: translateZ(25px);
+            box-shadow: 0 8px 25px rgba(46, 204, 113, 0.4);
+        }
+
+        .login-link {
+            text-align: center;
+            margin-top: 10px;
+            font-size: 13px;
+            transform: translateZ(10px);
+            transition: transform 0.3s ease;
+            color: var(--text-color);
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .login-link a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            margin-left: 5px;
+        }
+
+        .error-message {
+            color: #dc2626;
+            font-size: 13px;
+            font-weight: 400;
+            margin-top: 4px;
+            display: none;
+            transform: translateZ(5px);
+        }
+
+        .background-shapes {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .shape {
+            position: absolute;
+            background: linear-gradient(45deg, rgba(46, 204, 113, 0.1), rgba(39, 174, 96, 0.1));
+            border-radius: 50%;
+            animation: float 10s infinite ease-in-out;
+            pointer-events: none;
+        }
+
+        .shape:nth-child(1) {
+            width: 400px;
+            height: 400px;
+            top: -200px;
+            right: -200px;
+            animation-delay: 0s;
+        }
+
+        .shape:nth-child(2) {
+            width: 300px;
+            height: 300px;
+            bottom: -150px;
+            left: -150px;
+            animation-delay: -5s;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-20px) rotate(10deg);
+            }
+        }
+
+        @keyframes fadeOut {
+            from {
+                opacity: 1;
+                transform: translateX(0) translateZ(0);
+            }
+            to {
+                opacity: 0;
+                transform: translateX(50px) translateZ(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateX(-50px) translateZ(0);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0) translateZ(0);
+            }
+        }
+
+        .fade-out {
+            animation: fadeOut 0.5s ease-out forwards;
+        }
+
+        @media (min-width: 600px) {
+            .form-row {
+                grid-template-columns: 1fr 1fr;
+                gap: 12px;
+            }
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid transparent;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.9);
+            font-size: 14px;
+            color: var(--text-color);
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            caret-color: var(--primary-color);
+        }
+
+        .form-group input:focus {
+            border-color: var(--primary-color);
+            outline: none;
+            box-shadow: 0 5px 20px rgba(46, 204, 113, 0.15);
+            background: #fff;
+        }
+
+        .form-group input::placeholder {
+            color: #9ca3af;
+            opacity: 0.8;
+            font-size: 13px;
+        }
+    </style>
+</head>
+<body>
+    <div class="background-shapes">
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+    <div class="signup-container">
+        <div class="signup-card">
+            <div class="signup-header">
+                <img src="images/FarmCSlogo.png" alt="FarmCS Logo">
+                <h1>Create Account</h1>
+                <p>Join FarmCS Smart Farming Platform</p>
+            </div>
+            <form class="signup-form" id="signupForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <input type="text" id="firstName" placeholder="First Name" required>
+                        <div class="error-message" id="firstNameError"></div>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="lastName" placeholder="Last Name" required>
+                        <div class="error-message" id="lastNameError"></div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <input type="email" id="email" placeholder="Email Address" required>
+                    <div class="error-message" id="emailError"></div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <input type="password" id="password" placeholder="Password" required>
+                        <div class="error-message" id="passwordError"></div>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
+                        <div class="error-message" id="confirmPasswordError"></div>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <select id="state" required onchange="loadDistricts()">
+                            <option value="">Select State</option>
+                            <option value="Andhra Pradesh">Andhra Pradesh</option>
+                            <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                            <option value="Assam">Assam</option>
+                            <option value="Bihar">Bihar</option>
+                            <option value="Chhattisgarh">Chhattisgarh</option>
+                            <option value="Goa">Goa</option>
+                            <option value="Gujarat">Gujarat</option>
+                            <option value="Haryana">Haryana</option>
+                            <option value="Himachal Pradesh">Himachal Pradesh</option>
+                            <option value="Jharkhand">Jharkhand</option>
+                            <option value="Karnataka">Karnataka</option>
+                            <option value="Kerala">Kerala</option>
+                            <option value="Madhya Pradesh">Madhya Pradesh</option>
+                            <option value="Maharashtra">Maharashtra</option>
+                            <option value="Manipur">Manipur</option>
+                            <option value="Meghalaya">Meghalaya</option>
+                            <option value="Mizoram">Mizoram</option>
+                            <option value="Nagaland">Nagaland</option>
+                            <option value="Odisha">Odisha</option>
+                            <option value="Punjab">Punjab</option>
+                            <option value="Rajasthan">Rajasthan</option>
+                            <option value="Sikkim">Sikkim</option>
+                            <option value="Tamil Nadu">Tamil Nadu</option>
+                            <option value="Telangana">Telangana</option>
+                            <option value="Tripura">Tripura</option>
+                            <option value="Uttar Pradesh">Uttar Pradesh</option>
+                            <option value="Uttarakhand">Uttarakhand</option>
+                            <option value="West Bengal">West Bengal</option>
+                        </select>
+                        <div class="error-message" id="stateError"></div>
+                    </div>
+                    <div class="form-group">
+                        <select id="district" required disabled>
+                            <option value="">Select District</option>
+                        </select>
+                        <div class="error-message" id="districtError"></div>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <select id="farmType" required>
+                            <option value="">Select Farm Type</option>
+                            <option value="crop">Crop Farming</option>
+                            <option value="livestock">Livestock Farming</option>
+                            <option value="mixed">Mixed Farming</option>
+                            <option value="organic">Organic Farming</option>
+                            <option value="greenhouse">Greenhouse</option>
+                        </select>
+                        <div class="error-message" id="farmTypeError"></div>
+                    </div>
+                    <div class="form-group">
+                        <input type="number" id="farmSize" placeholder="Farm Size (acres)" required>
+                        <div class="error-message" id="farmSizeError"></div>
+                    </div>
+                </div>
+
+                <button type="submit" class="signup-btn">Create Account</button>
+                
+                <div class="login-link">
+                    Already have an account? <a href="login.html" class="page-transition">Login here</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add transition effect when clicking on login link
+            document.querySelector('.page-transition').addEventListener('click', function(e) {
+                e.preventDefault();
+                const container = document.querySelector('.signup-card');
+                container.classList.add('fade-out');
+                
+                setTimeout(() => {
+                    window.location.href = this.href;
+                }, 500);
+            });
+        });
+
+        document.getElementById('signupForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Reset error messages
+            document.querySelectorAll('.error-message').forEach(error => {
+                error.style.display = 'none';
+            });
+
+            // Get form values
+            const formData = {
+                firstName: document.getElementById('firstName').value,
+                lastName: document.getElementById('lastName').value,
+                email: document.getElementById('email').value,
+                password: document.getElementById('password').value,
+                confirmPassword: document.getElementById('confirmPassword').value,
+                state: document.getElementById('state').value,
+                district: document.getElementById('district').value,
+                farmType: document.getElementById('farmType').value,
+                farmSize: parseFloat(document.getElementById('farmSize').value)
+            };
+
+            // Validate form
+            let isValid = true;
+
+            if (formData.password.length < 8) {
+                document.getElementById('passwordError').textContent = 'Password must be at least 8 characters long';
+                document.getElementById('passwordError').style.display = 'block';
+                isValid = false;
+            }
+
+            if (formData.password !== formData.confirmPassword) {
+                document.getElementById('confirmPasswordError').textContent = 'Passwords do not match';
+                document.getElementById('confirmPasswordError').style.display = 'block';
+                isValid = false;
+            }
+
+            if (formData.farmSize <= 0) {
+                document.getElementById('farmSizeError').textContent = 'Farm size must be greater than 0';
+                document.getElementById('farmSizeError').style.display = 'block';
+                isValid = false;
+            }
+
+            if (isValid) {
+                // Remove confirmPassword from data to be sent
+                delete formData.confirmPassword;
+                
+                // Show loading state
+                const submitBtn = document.querySelector('.signup-btn');
+                const originalText = submitBtn.textContent;
+                submitBtn.textContent = 'Creating Account...';
+                submitBtn.disabled = true;
+
+                // Send data to server
+                fetch('handlers/signup_handler.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(formData)
+                })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    if (data.success) {
+                        // Store user data
+                        localStorage.setItem('userData', JSON.stringify(data.data));
+                        localStorage.setItem('loggedIn', 'true');
+                        
+                        // Show success message before redirect
+                        alert('Account created successfully! Redirecting to login...');
+                        
+                        // Redirect to login page
+                        window.location.href = 'login.html';
+                    } else {
+                        // Show specific error message
+                        alert(data.message || 'Failed to create account. Please try again.');
+                        submitBtn.textContent = originalText;
+                        submitBtn.disabled = false;
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('An error occurred. Please try again later.');
+                    submitBtn.textContent = originalText;
+                    submitBtn.disabled = false;
+                });
+            }
+        });
+
+        function loadDistricts() {
+            const state = document.getElementById('state').value;
+            const districtSelect = document.getElementById('district');
+            districtSelect.disabled = false;
+
+            const districts = {
+                'Andhra Pradesh': ['Anantapur', 'Chittoor', 'East Godavari', 'Guntur', 'Kadapa', 'Krishna', 'Kurnool', 'Prakasam', 'Srikakulam', 'Visakhapatnam', 'Vizianagaram', 'West Godavari', 'YSR Kadapa'],
+                'Arunachal Pradesh': ['Anjaw', 'Changlang', 'Dibang Valley', 'East Kameng', 'East Siang', 'Kamle', 'Kra Daadi', 'Kurung Kumey', 'Lepa Rada', 'Lohit', 'Longding', 'Lower Dibang Valley', 'Lower Siang', 'Lower Subansiri', 'Namsai', 'Pakke Kessang', 'Papum Pare', 'Shi Yomi', 'Siang', 'Tawang', 'Tirap', 'Upper Siang', 'Upper Subansiri', 'West Kameng', 'West Siang'],
+                'Assam': ['Baksa', 'Barpeta', 'Biswanath', 'Bongaigaon', 'Cachar', 'Charaideo', 'Chirang', 'Darrang', 'Dhemaji', 'Dhubri', 'Dibrugarh', 'Dima Hasao', 'Goalpara', 'Golaghat', 'Hailakandi', 'Hojai', 'Jorhat', 'Kamrup', 'Kamrup Metropolitan', 'Karbi Anglong', 'Karimganj', 'Kokrajhar', 'Lakhimpur', 'Majuli', 'Morigaon', 'Nagaon', 'Nalbari', 'Sivasagar', 'Sonitpur', 'South Salmara-Mankachar', 'Tinsukia', 'Udalguri', 'West Karbi Anglong'],
+                'Bihar': ['Araria', 'Arwal', 'Aurangabad', 'Banka', 'Begusarai', 'Bhagalpur', 'Bhojpur', 'Buxar', 'Darbhanga', 'East Champaran', 'Gaya', 'Gopalganj', 'Jamui', 'Jehanabad', 'Kaimur', 'Katihar', 'Khagaria', 'Kishanganj', 'Lakhisarai', 'Madhepura', 'Madhubani', 'Munger', 'Muzaffarpur', 'Nalanda', 'Nawada', 'Patna', 'Purnia', 'Rohtas', 'Saharsa', 'Samastipur', 'Saran', 'Sheikhpura', 'Sheohar', 'Sitamarhi', 'Siwan', 'Supaul', 'Vaishali', 'West Champaran'],
+                'Chhattisgarh': ['Balod', 'Baloda Bazar', 'Balrampur', 'Bastar', 'Bemetara', 'Bijapur', 'Bilaspur', 'Dantewada', 'Dhamtari', 'Durg', 'Gariaband', 'Gaurela-Pendra-Marwahi', 'Janjgir-Champa', 'Jashpur', 'Kabirdham', 'Kanker', 'Kondagaon', 'Korba', 'Koriya', 'Mahasamund', 'Mungeli', 'Narayanpur', 'Raigarh', 'Raipur', 'Rajnandgaon', 'Sukma', 'Surajpur', 'Surguja'],
+                'Goa': ['North Goa', 'South Goa'],
+                'Gujarat': ['Ahmedabad', 'Amreli', 'Anand', 'Aravalli', 'Banaskantha', 'Bharuch', 'Bhavnagar', 'Botad', 'Chhota Udaipur', 'Dahod', 'Dang', 'Devbhoomi Dwarka', 'Gandhinagar', 'Gir Somnath', 'Jamnagar', 'Junagadh', 'Kheda', 'Kutch', 'Mahisagar', 'Mehsana', 'Morbi', 'Narmada', 'Navsari', 'Panchmahal', 'Patan', 'Porbandar', 'Rajkot', 'Sabarkantha', 'Surat', 'Surendranagar', 'Tapi', 'Vadodara', 'Valsad'],
+                'Haryana': ['Ambala', 'Bhiwani', 'Charkhi Dadri', 'Faridabad', 'Fatehabad', 'Gurugram', 'Hisar', 'Jhajjar', 'Jind', 'Kaithal', 'Karnal', 'Kurukshetra', 'Mahendragarh', 'Nuh', 'Palwal', 'Panchkula', 'Panipat', 'Rewari', 'Rohtak', 'Sirsa', 'Sonipat', 'Yamunanagar'],
+                'Himachal Pradesh': ['Bilaspur', 'Chamba', 'Hamirpur', 'Kangra', 'Kinnaur', 'Kullu', 'Lahaul and Spiti', 'Mandi', 'Shimla', 'Sirmaur', 'Solan', 'Una'],
+                'Jharkhand': ['Bokaro', 'Chatra', 'Deoghar', 'Dhanbad', 'Dumka', 'East Singhbhum', 'Garhwa', 'Giridih', 'Godda', 'Gumla', 'Hazaribagh', 'Jamtara', 'Khunti', 'Koderma', 'Latehar', 'Lohardaga', 'Pakur', 'Palamu', 'Ramgarh', 'Ranchi', 'Sahebganj', 'Seraikela Kharsawan', 'Simdega', 'West Singhbhum'],
+                'Karnataka': ['Bagalkot', 'Ballari', 'Belagavi', 'Bengaluru Rural', 'Bengaluru Urban', 'Bidar', 'Chamarajanagar', 'Chikballapur', 'Chikkamagaluru', 'Chitradurga', 'Dakshina Kannada', 'Davanagere', 'Dharwad', 'Gadag', 'Hassan', 'Haveri', 'Kalaburagi', 'Kodagu', 'Kolar', 'Koppal', 'Mandya', 'Mysuru', 'Raichur', 'Ramanagara', 'Shivamogga', 'Tumakuru', 'Udupi', 'Uttara Kannada', 'Vijayapura', 'Yadgir'],
+                'Kerala': ['Alappuzha', 'Ernakulam', 'Idukki', 'Kannur', 'Kasaragod', 'Kollam', 'Kottayam', 'Kozhikode', 'Malappuram', 'Palakkad', 'Pathanamthitta', 'Thiruvananthapuram', 'Thrissur', 'Wayanad'],
+                'Madhya Pradesh': ['Agar Malwa', 'Alirajpur', 'Anuppur', 'Ashoknagar', 'Balaghat', 'Barwani', 'Betul', 'Bhind', 'Bhopal', 'Burhanpur', 'Chhatarpur', 'Chhindwara', 'Damoh', 'Datia', 'Dewas', 'Dhar', 'Dindori', 'Guna', 'Gwalior', 'Harda', 'Hoshangabad', 'Indore', 'Jabalpur', 'Jhabua', 'Katni', 'Khandwa', 'Khargone', 'Mandla', 'Mandsaur', 'Morena', 'Narsinghpur', 'Neemuch', 'Panna', 'Raisen', 'Rajgarh', 'Ratlam', 'Rewa', 'Sagar', 'Satna', 'Sehore', 'Seoni', 'Shahdol', 'Shajapur', 'Sheopur', 'Shivpuri', 'Sidhi', 'Singrauli', 'Tikamgarh', 'Ujjain', 'Umaria', 'Vidisha'],
+                'Maharashtra': ['Ahmednagar', 'Akola', 'Amravati', 'Aurangabad', 'Beed', 'Bhandara', 'Buldhana', 'Chandrapur', 'Dhule', 'Gadchiroli', 'Gondia', 'Hingoli', 'Jalgaon', 'Jalna', 'Kolhapur', 'Latur', 'Mumbai City', 'Mumbai Suburban', 'Nagpur', 'Nanded', 'Nandurbar', 'Nashik', 'Osmanabad', 'Palghar', 'Parbhani', 'Pune', 'Raigad', 'Ratnagiri', 'Sangli', 'Satara', 'Sindhudurg', 'Solapur', 'Thane', 'Wardha', 'Washim', 'Yavatmal'],
+                'Manipur': ['Bishnupur', 'Chandel', 'Churachandpur', 'Imphal East', 'Imphal West', 'Jiribam', 'Kakching', 'Kamjong', 'Kangpokpi', 'Noney', 'Pherzawl', 'Senapati', 'Tamenglong', 'Tengnoupal', 'Thoubal', 'Ukhrul'],
+                'Meghalaya': ['East Garo Hills', 'East Jaintia Hills', 'East Khasi Hills', 'North Garo Hills', 'Ri Bhoi', 'South Garo Hills', 'South West Garo Hills', 'South West Khasi Hills', 'West Garo Hills', 'West Jaintia Hills', 'West Khasi Hills'],
+                'Mizoram': ['Aizawl', 'Champhai', 'Hnahthial', 'Khawzawl', 'Kolasib', 'Lawngtlai', 'Lunglei', 'Mamit', 'Saiha', 'Saitual', 'Serchhip'],
+                'Nagaland': ['Dimapur', 'Kiphire', 'Kohima', 'Longleng', 'Mokokchung', 'Mon', 'Noklak', 'Peren', 'Phek', 'Tuensang', 'Wokha', 'Zunheboto'],
+                'Odisha': ['Angul', 'Balangir', 'Balasore', 'Bargarh', 'Bhadrak', 'Boudh', 'Cuttack', 'Debagarh', 'Dhenkanal', 'Gajapati', 'Ganjam', 'Jagatsinghapur', 'Jajpur', 'Jharsuguda', 'Kalahandi', 'Kandhamal', 'Kendrapara', 'Kendujhar', 'Khordha', 'Koraput', 'Malkangiri', 'Mayurbhanj', 'Nabarangpur', 'Nayagarh', 'Nuapada', 'Puri', 'Rayagada', 'Sambalpur', 'Subarnapur', 'Sundergarh'],
+                'Punjab': ['Amritsar', 'Barnala', 'Bathinda', 'Faridkot', 'Fatehgarh Sahib', 'Fazilka', 'Ferozepur', 'Gurdaspur', 'Hoshiarpur', 'Jalandhar', 'Kapurthala', 'Ludhiana', 'Mansa', 'Moga', 'Muktsar', 'Nawanshahr', 'Pathankot', 'Patiala', 'Rupnagar', 'Sangrur', 'SAS Nagar', 'Tarn Taran'],
+                'Rajasthan': ['Ajmer', 'Alwar', 'Banswara', 'Baran', 'Barmer', 'Bharatpur', 'Bhilwara', 'Bikaner', 'Bundi', 'Chittorgarh', 'Churu', 'Dausa', 'Dholpur', 'Dungarpur', 'Hanumangarh', 'Jaipur', 'Jaisalmer', 'Jalore', 'Jhalawar', 'Jhunjhunu', 'Jodhpur', 'Karauli', 'Kota', 'Nagaur', 'Pali', 'Pratapgarh', 'Rajsamand', 'Sawai Madhopur', 'Sikar', 'Sirohi', 'Sri Ganganagar', 'Tonk', 'Udaipur'],
+                'Sikkim': ['East Sikkim', 'North Sikkim', 'South Sikkim', 'West Sikkim'],
+                'Tamil Nadu': ['Ariyalur', 'Chengalpattu', 'Chennai', 'Coimbatore', 'Cuddalore', 'Dharmapuri', 'Dindigul', 'Erode', 'Kallakurichi', 'Kancheepuram', 'Karur', 'Krishnagiri', 'Madurai', 'Nagapattinam', 'Namakkal', 'Nilgiris', 'Perambalur', 'Pudukkottai', 'Ramanathapuram', 'Ranipet', 'Salem', 'Sivaganga', 'Tenkasi', 'Thanjavur', 'Theni', 'Thoothukudi', 'Tiruchirappalli', 'Tirunelveli', 'Tirupathur', 'Tiruppur', 'Tiruvallur', 'Tiruvannamalai', 'Tiruvarur', 'Vellore', 'Viluppuram', 'Virudhunagar'],
+                'Telangana': ['Adilabad', 'Bhadradri Kothagudem', 'Hyderabad', 'Jagtial', 'Jangaon', 'Jayashankar Bhupalpally', 'Jogulamba Gadwal', 'Kamareddy', 'Karimnagar', 'Khammam', 'Kumuram Bheem', 'Mahabubabad', 'Mahbubnagar', 'Mancherial', 'Medak', 'Medchal-Malkajgiri', 'Mulugu', 'Nagarkurnool', 'Nalgonda', 'Narayanpet', 'Nirmal', 'Nizamabad', 'Peddapalli', 'Rajanna Sircilla', 'Rangareddy', 'Sangareddy', 'Siddipet', 'Suryapet', 'Vikarabad', 'Wanaparthy', 'Warangal Rural', 'Warangal Urban', 'Yadadri Bhuvanagiri'],
+                'Tripura': ['Dhalai', 'Gomati', 'Khowai', 'North Tripura', 'Sepahijala', 'South Tripura', 'Unakoti', 'West Tripura'],
+                'Uttar Pradesh': ['Agra', 'Aligarh', 'Ambedkar Nagar', 'Amethi', 'Amroha', 'Auraiya', 'Ayodhya', 'Azamgarh', 'Badaun', 'Baghpat', 'Bahraich', 'Ballia', 'Balrampur', 'Banda', 'Barabanki', 'Bareilly', 'Basti', 'Bhadohi', 'Bijnor', 'Budaun', 'Bulandshahr', 'Chandauli', 'Chitrakoot', 'Deoria', 'Etah', 'Etawah', 'Farrukhabad', 'Fatehpur', 'Firozabad', 'Gautam Buddha Nagar', 'Ghaziabad', 'Ghazipur', 'Gonda', 'Gorakhpur', 'Hamirpur', 'Hapur', 'Hardoi', 'Hathras', 'Jalaun', 'Jaunpur', 'Jhansi', 'Kannauj', 'Kanpur Dehat', 'Kanpur Nagar', 'Kasganj', 'Kaushambi', 'Kheri', 'Kushinagar', 'Lalitpur', 'Lucknow', 'Maharajganj', 'Mahoba', 'Mainpuri', 'Mathura', 'Mau', 'Meerut', 'Mirzapur', 'Moradabad', 'Muzaffarnagar', 'Pilibhit', 'Pratapgarh', 'Prayagraj', 'Raebareli', 'Rampur', 'Saharanpur', 'Sambhal', 'Sant Kabir Nagar', 'Shahjahanpur', 'Shamli', 'Shravasti', 'Siddharthnagar', 'Sitapur', 'Sonbhadra', 'Sultanpur', 'Unnao', 'Varanasi'],
+                'Uttarakhand': ['Almora', 'Bageshwar', 'Chamoli', 'Champawat', 'Dehradun', 'Haridwar', 'Nainital', 'Pauri Garhwal', 'Pithoragarh', 'Rudraprayag', 'Tehri Garhwal', 'Udham Singh Nagar', 'Uttarkashi'],
+                'West Bengal': ['Alipurduar', 'Bankura', 'Birbhum', 'Cooch Behar', 'Dakshin Dinajpur', 'Darjeeling', 'Hooghly', 'Howrah', 'Jalpaiguri', 'Jhargram', 'Kalimpong', 'Kolkata', 'Malda', 'Murshidabad', 'Nadia', 'North 24 Parganas', 'Paschim Bardhaman', 'Paschim Medinipur', 'Purba Bardhaman', 'Purba Medinipur', 'Purulia', 'South 24 Parganas', 'Uttar Dinajpur']
+            };
+
+            const stateDistricts = districts[state] || [];
+            const districtOptions = stateDistricts.map(d => `<option value="${d}">${d}</option>`).join('');
+            districtSelect.innerHTML = `<option value="">Select District</option>${districtOptions}`;
+        }
+
+        // Add 3D hover effect to the container
+        const card = document.querySelector('.signup-card');
+        const header = document.querySelector('.signup-header');
+        const formGroups = document.querySelectorAll('.form-group');
+        
+        let isHovered = false;
+        let rafId = null;
+        let mouseX = 0;
+        let mouseY = 0;
+        let centerX = 0;
+        let centerY = 0;
+        
+        function updateCardPosition(e) {
+            const rect = card.getBoundingClientRect();
+            centerX = rect.left + rect.width / 2;
+            centerY = rect.top + rect.height / 2;
+            mouseX = e.clientX - centerX;
+            mouseY = e.clientY - centerY;
+        }
+        
+        function animate() {
+            if (!isHovered) {
+                mouseX *= 0.9;
+                mouseY *= 0.9;
+                
+                if (Math.abs(mouseX) < 0.001 && Math.abs(mouseY) < 0.001) {
+                    cancelAnimationFrame(rafId);
+                    return;
+                }
+            }
+            
+            const rotateX = Math.min(Math.max(mouseY * -0.03, -5), 5);
+            const rotateY = Math.min(Math.max(mouseX * 0.03, -5), 5);
+            
+            card.style.transform = `
+                perspective(1000px)
+                rotateX(${rotateX}deg)
+                rotateY(${rotateY}deg)
+                translateZ(10px)
+                scale3d(1.01, 1.01, 1.01)
+            `;
+            
+            header.style.transform = `
+                translateZ(25px)
+                rotateX(${rotateX * 0.5}deg)
+                rotateY(${rotateY * 0.5}deg)
+            `;
+            
+            formGroups.forEach((group, i) => {
+                const z = 15 + (i * 3);
+                group.style.transform = `
+                    translateZ(${z}px)
+                    rotateX(${rotateX * 0.3}deg)
+                    rotateY(${rotateY * 0.3}deg)
+                `;
+            });
+            
+            rafId = requestAnimationFrame(animate);
+        }
+        
+        card.addEventListener('mouseenter', () => {
+            isHovered = true;
+            rafId = requestAnimationFrame(animate);
+        });
+        
+        card.addEventListener('mousemove', updateCardPosition);
+        
+        card.addEventListener('mouseleave', () => {
+            isHovered = false;
+        });
+        
+        // Add floating animation to the card
+        function floatingAnimation() {
+            const floatY = Math.sin(Date.now() / 1000) * 2;
+            card.style.transform = `
+                perspective(1000px)
+                translateY(${floatY}px)
+                scale3d(1, 1, 1)
+            `;
+            requestAnimationFrame(floatingAnimation);
+        }
+        
+        if (!window.matchMedia('(hover: hover)').matches) {
+            floatingAnimation();
+        }
+    </script>
+</body>
+</html>

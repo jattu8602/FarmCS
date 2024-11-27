@@ -1,0 +1,13 @@
+{
+    "name": "farmcs/website",
+    "description": "FarmCS Website with Admin Panel",
+    "type": "project",
+    "require": {
+        "phpoffice/phpspreadsheet": "^1.29"
+    },
+    "config": {
+        "platform": {
+            "php": "7.4"
+        }
+    }
+}
