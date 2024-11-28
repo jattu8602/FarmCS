@@ -4,112 +4,52 @@ class Database {
     private $db_name = 'farmcs';
     private $username = 'root';
     private $password = '';
-    private $conn = null;
+    private $conn;
 
     public function connect() {
-        try {
-            // First connect without database to create it if needed
-            $tempConn = new PDO("mysql:host=$this->host", $this->username, $this->password);
-            $tempConn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            
-            // Create database if it doesn't exist
-            $tempConn->exec("CREATE DATABASE IF NOT EXISTS `$this->db_name`");
-            $tempConn = null;
+        $this->conn = null;
 
-            // Now connect to the specific database
+        try {
             $this->conn = new PDO(
-                "mysql:host=$this->host;dbname=$this->db_name;charset=utf8mb4",
+                'mysql:host=' . $this->host . ';charset=utf8',
                 $this->username,
                 $this->password,
-                array(
-                    PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-                    PDO::ATTR_EMULATE_PREPARES => false,
-                    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
-                )
+                array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION)
             );
-
-            // Create tables
-            $this->createTables();
             
-            // Create test user if no users exist
-            $this->createTestUser();
+            // Create database if not exists
+            $this->conn->exec("CREATE DATABASE IF NOT EXISTS $this->db_name");
+            $this->conn->exec("USE $this->db_name");
+            
+            // Create users table with all necessary fields
+            $this->conn->exec("CREATE TABLE IF NOT EXISTS users (
+                id INT AUTO_INCREMENT PRIMARY KEY,
+                email VARCHAR(100) UNIQUE NOT NULL,
+                password VARCHAR(255) NOT NULL,
+                first_name VARCHAR(50),
+                last_name VARCHAR(50),
+                state VARCHAR(50),
+                district VARCHAR(50),
+                farm_type VARCHAR(20),
+                farm_size DECIMAL(10,2),
+                profile_image VARCHAR(255),
+                role VARCHAR(20) DEFAULT 'user',
+                is_active TINYINT(1) DEFAULT 1,
+                created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                last_login TIMESTAMP NULL,
+                updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+            ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4");
+
+            // Create uploads directory if it doesn't exist
+            $uploadsDir = dirname(__DIR__) . '/uploads/profile_images';
+            if (!file_exists($uploadsDir)) {
+                mkdir($uploadsDir, 0777, true);
+            }
 
             return $this->conn;
         } catch(PDOException $e) {
             error_log("Database Connection Error: " . $e->getMessage());
-            throw new Exception("Database connection failed: " . $e->getMessage());
-        }
-    }
-
-    private function createTables() {
-        try {
-            // Create users table
-            $this->conn->exec("CREATE TABLE IF NOT EXISTS `users` (
-                `id` INT AUTO_INCREMENT PRIMARY KEY,
-                `email` VARCHAR(255) NOT NULL UNIQUE,
-                `password_hash` VARCHAR(255) NOT NULL,
-                `first_name` VARCHAR(100),
-                `last_name` VARCHAR(100),
-                `state` VARCHAR(100),
-                `district` VARCHAR(100),
-                `farm_type` VARCHAR(100),
-                `farm_size` DECIMAL(10,2),
-                `role` VARCHAR(20) DEFAULT 'user',
-                `session_token` VARCHAR(64),
-                `is_active` TINYINT(1) DEFAULT 1,
-                `last_login` DATETIME NULL,
-                `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-                `updated_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-                INDEX idx_email (email),
-                INDEX idx_session_token (session_token)
-            ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci");
-
-        } catch(PDOException $e) {
-            error_log("Table Creation Error: " . $e->getMessage());
-            throw new Exception("Failed to create database tables: " . $e->getMessage());
-        }
-    }
-
-    private function createTestUser() {
-        try {
-            // Check if any users exist
-            $stmt = $this->conn->query("SELECT COUNT(*) as count FROM users");
-            $result = $stmt->fetch();
-
-            if ($result['count'] == 0) {
-                // Create test user with hashed password
-                $hashedPassword = password_hash('password123', PASSWORD_DEFAULT);
-                $stmt = $this->conn->prepare("
-                    INSERT INTO users (
-                        email, 
-                        password_hash, 
-                        first_name, 
-                        last_name, 
-                        state, 
-                        district, 
-                        farm_type, 
-                        farm_size,
-                        role
-                    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
-                ");
-
-                $stmt->execute([
-                    'test@example.com',
-                    $hashedPassword,
-                    'Test',
-                    'User',
-                    'Test State',
-                    'Test District',
-                    'Crop',
-                    10,
-                    'admin'
-                ]);
-
-                error_log("Test user created successfully");
-            }
-        } catch(PDOException $e) {
-            error_log("Test User Creation Error: " . $e->getMessage());
-            // Don't throw exception for test user creation
+            throw new Exception("Database connection failed");
         }
     }
 
@@ -178,3 +118,4 @@ class Database {
         return $this->conn->lastInsertId();
     }
 }
+?>

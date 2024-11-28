@@ -439,45 +439,68 @@
             clearError('emailError');
             clearError('passwordError');
             
-            let hasError = false;
+            const email = document.getElementById('email').value.trim();
+            const password = document.getElementById('password').value;
+            const rememberMe = document.getElementById('rememberMe').checked;
             
-            if (!emailInput.value) {
-                showError('Please enter your email', 'emailError');
-                hasError = true;
-            } else if (!isValidEmail(emailInput.value)) {
+            let isValid = true;
+            
+            // Email validation
+            if (!email) {
+                showError('Please enter your email address', 'emailError');
+                isValid = false;
+            } else if (!isValidEmail(email)) {
                 showError('Please enter a valid email address', 'emailError');
-                hasError = true;
+                isValid = false;
             }
             
-            if (!passwordInput.value) {
+            // Password validation
+            if (!password) {
                 showError('Please enter your password', 'passwordError');
-                hasError = true;
+                isValid = false;
             }
             
-            if (!hasError) {
+            if (isValid) {
+                const loginBtn = document.querySelector('.login-btn');
+                const originalText = loginBtn.textContent;
+                loginBtn.textContent = 'Logging in...';
+                loginBtn.disabled = true;
+                
                 try {
-                    const response = await fetch('handlers/login_handler.php', {
+                    const response = await fetch(window.location.origin + '/FarmCS/handlers/login_handler.php', {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json',
+                            'Accept': 'application/json'
                         },
                         body: JSON.stringify({
-                            email: emailInput.value,
-                            password: passwordInput.value
+                            email: email,
+                            password: password
                         })
                     });
 
-                    const data = await response.json();
+                    const result = await response.json();
                     
-                    if (data.success) {
-                        localStorage.setItem('user', JSON.stringify(data.data));
+                    if (result.success) {
+                        // Store user data and token
+                        localStorage.setItem('userEmail', email);
                         localStorage.setItem('isLoggedIn', 'true');
-                        window.location.href = 'index.html';
+                        if (rememberMe) {
+                            localStorage.setItem('rememberMe', 'true');
+                        }
+                        
+                        // Redirect to dashboard
+                        window.location.href = 'farmerdashboard.html';
                     } else {
-                        showError(data.message || 'Invalid email or password', 'emailError');
+                        showError(result.message || 'Invalid email or password', 'emailError');
+                        loginBtn.textContent = originalText;
+                        loginBtn.disabled = false;
                     }
                 } catch (error) {
-                    showError('An error occurred. Please try again later.', 'emailError');
+                    console.error('Error:', error);
+                    showError('An error occurred. Please try again.', 'emailError');
+                    loginBtn.textContent = originalText;
+                    loginBtn.disabled = false;
                 }
             }
         });

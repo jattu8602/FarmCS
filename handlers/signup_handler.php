@@ -4,11 +4,13 @@ header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Methods: POST, OPTIONS');
 header('Access-Control-Allow-Headers: Content-Type');
 
-require_once('../config/Database.php');
-
-// Enable error reporting for debugging
+// Enable error logging
 error_reporting(E_ALL);
-ini_set('display_errors', 1);
+ini_set('display_errors', 0);
+ini_set('log_errors', 1);
+ini_set('error_log', '../logs/php_errors.log');
+
+require_once('../config/Database.php');
 
 // Handle preflight requests
 if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
@@ -26,7 +28,7 @@ $response = array(
 try {
     // Get POST data
     $json = file_get_contents('php://input');
-    error_log("Received data: " . $json); // Log received data
+    error_log("Signup attempt - Raw input: " . $json);
     
     $data = json_decode($json, true);
 
@@ -36,16 +38,30 @@ try {
     }
 
     // Validate required fields
-    if (empty($data['firstName']) || empty($data['lastName']) || empty($data['email']) || 
-        empty($data['password']) || empty($data['state']) || empty($data['district']) || 
-        empty($data['farmType']) || empty($data['farmSize'])) {
-        throw new Exception('All fields are required');
+    $requiredFields = ['firstName', 'lastName', 'email', 'password', 'state', 'district', 'farmType', 'farmSize'];
+    $missingFields = [];
+    foreach ($requiredFields as $field) {
+        if (empty($data[$field])) {
+            $missingFields[] = $field;
+        }
+    }
+    
+    if (!empty($missingFields)) {
+        error_log("Missing required fields: " . implode(', ', $missingFields));
+        throw new Exception('Required fields missing: ' . implode(', ', $missingFields));
     }
 
     // Validate email format
     $email = filter_var(trim($data['email']), FILTER_SANITIZE_EMAIL);
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        error_log("Invalid email format: " . $email);
         throw new Exception('Invalid email format');
+    }
+
+    // Validate farm size is numeric and positive
+    if (!is_numeric($data['farmSize']) || $data['farmSize'] <= 0) {
+        error_log("Invalid farm size: " . $data['farmSize']);
+        throw new Exception('Farm size must be a positive number');
     }
 
     // Initialize database connection
@@ -56,6 +72,7 @@ try {
     $stmt = $db->prepare("SELECT id FROM users WHERE email = ?");
     $stmt->execute([$email]);
     if ($stmt->fetch()) {
+        error_log("Email already exists: " . $email);
         throw new Exception('Email already exists');
     }
 
@@ -75,8 +92,7 @@ try {
             farm_size,
             role,
             is_active,
-            created_at,
-            updated_at
+            created_at
         ) VALUES (
             :firstName,
             :lastName,
@@ -88,14 +104,13 @@ try {
             :farmSize,
             'user',
             1,
-            NOW(),
             NOW()
         )
     ";
 
-    // Insert new user with named parameters
+    // Execute insert statement
     $stmt = $db->prepare($sql);
-    $stmt->execute([
+    $success = $stmt->execute([
         ':firstName' => $data['firstName'],
         ':lastName' => $data['lastName'],
         ':email' => $email,
@@ -106,42 +121,31 @@ try {
         ':farmSize' => $data['farmSize']
     ]);
 
-    // Get the new user's ID
-    $userId = $db->lastInsertId();
+    if ($success) {
+        // Prepare user data for response
+        $userData = [
+            'email' => $email,
+            'firstName' => $data['firstName'],
+            'lastName' => $data['lastName'],
+            'state' => $data['state'],
+            'district' => $data['district'],
+            'farmType' => $data['farmType'],
+            'farmSize' => $data['farmSize']
+        ];
 
-    // Return user data (excluding password)
-    $response['success'] = true;
-    $response['message'] = 'Account created successfully';
-    $response['data'] = [
-        'id' => $userId,
-        'first_name' => $data['firstName'],
-        'last_name' => $data['lastName'],
-        'email' => $email,
-        'state' => $data['state'],
-        'district' => $data['district'],
-        'farm_type' => $data['farmType'],
-        'farm_size' => $data['farmSize'],
-        'role' => 'user'
-    ];
+        $response['success'] = true;
+        $response['message'] = 'Account created successfully';
+        $response['data'] = $userData;
+
+        error_log("User created successfully: " . $email);
+    } else {
+        throw new Exception('Failed to create account');
+    }
 
 } catch (Exception $e) {
-    $response['success'] = false;
-    $response['message'] = $e->getMessage();
-    
-    // Log error (but don't expose it to client)
     error_log("Signup error: " . $e->getMessage());
-    
-    // If it's a PDO error, log it with details
-    if ($e instanceof PDOException) {
-        error_log("Database error details: " . $e->getMessage());
-        $response['message'] = 'A database error occurred. Please try again later.';
-    }
-    
-    http_response_code(400);
-} finally {
-    // Clear database connection
-    $db = null;
+    $response['message'] = $e->getMessage();
 }
 
-// Send response
 echo json_encode($response);
+?>

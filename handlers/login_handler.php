@@ -4,6 +4,12 @@ header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Methods: POST, OPTIONS');
 header('Access-Control-Allow-Headers: Content-Type');
 
+// Enable error logging
+error_reporting(E_ALL);
+ini_set('display_errors', 0);
+ini_set('log_errors', 1);
+ini_set('error_log', '../logs/php_errors.log');
+
 require_once('../config/Database.php');
 
 // Handle preflight requests
@@ -27,11 +33,13 @@ try {
 
     // Get JSON input
     $json = file_get_contents('php://input');
+    error_log("Login attempt - Raw input: " . $json);
+    
     $data = json_decode($json, true);
 
     // Validate JSON data
     if (json_last_error() !== JSON_ERROR_NONE) {
-        throw new Exception('Invalid JSON format');
+        throw new Exception('Invalid JSON format: ' . json_last_error_msg());
     }
 
     // Validate required fields
@@ -63,12 +71,14 @@ try {
             district,
             farm_type,
             farm_size,
+            created_at,
             role 
         FROM users 
         WHERE email = ? AND is_active = 1
     ');
 
     if (!$stmt) {
+        error_log("Failed to prepare login statement for email: " . $email);
         throw new Exception('Database error: Failed to prepare statement');
     }
 
@@ -76,53 +86,46 @@ try {
     $stmt->execute([$email]);
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
-    // For debugging
-    error_log("Login attempt for email: " . $email);
-    if ($user) {
-        error_log("User found, verifying password");
-    } else {
-        error_log("No user found with email: " . $email);
-    }
+    // Log login attempt
+    error_log("Login attempt for email: " . $email . " - User found: " . ($user ? 'Yes' : 'No'));
 
     // Verify user exists and password is correct
     if (!$user || !password_verify($password, $user['password_hash'])) {
-        // Use a generic error message to prevent user enumeration
+        error_log("Login failed for email: " . $email . " - " . ($user ? 'Invalid password' : 'User not found'));
         throw new Exception('Invalid email or password');
     }
 
-    // Remove sensitive data before sending response
+    // Remove sensitive data
     unset($user['password_hash']);
 
-    // Generate session token
-    $sessionToken = bin2hex(random_bytes(32));
-    
-    // Update user's session token in database
-    $updateStmt = $db->prepare('UPDATE users SET session_token = ?, last_login = NOW() WHERE id = ?');
-    $updateStmt->execute([$sessionToken, $user['id']]);
+    // Update last login time
+    $updateStmt = $db->prepare('UPDATE users SET last_login = NOW() WHERE id = ?');
+    $updateStmt->execute([$user['id']]);
 
-    // Add session token to user data
-    $user['session_token'] = $sessionToken;
+    // Prepare user data for response
+    $userData = [
+        'email' => $user['email'],
+        'firstName' => $user['first_name'],
+        'lastName' => $user['last_name'],
+        'state' => $user['state'],
+        'district' => $user['district'],
+        'farmType' => $user['farm_type'],
+        'farmSize' => $user['farm_size'],
+        'joinDate' => $user['created_at'],
+        'role' => $user['role']
+    ];
 
-    // Set successful response
+    // Set success response
     $response['success'] = true;
     $response['message'] = 'Login successful';
-    $response['data'] = $user;
+    $response['data'] = $userData;
+
+    error_log("Login successful for email: " . $email);
 
 } catch (Exception $e) {
-    $response['success'] = false;
-    $response['message'] = $e->getMessage();
-    
-    // Log error (but don't expose it to client)
     error_log("Login error: " . $e->getMessage());
-    
-    // If it's a PDO error, log it but return a generic message
-    if ($e instanceof PDOException) {
-        $response['message'] = 'A database error occurred. Please try again later.';
-    }
-} finally {
-    // Clear database connection
-    $db = null;
+    $response['message'] = $e->getMessage();
 }
 
-// Send response
 echo json_encode($response);
+?>

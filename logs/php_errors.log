@@ -1,0 +1,586 @@
+[28-Nov-2024 00:00:20 Europe/Berlin] Request received at signup_handler.php
+[28-Nov-2024 00:00:20 Europe/Berlin] Request method: POST
+[28-Nov-2024 00:00:20 Europe/Berlin] Received raw data: {"firstName":"Abhishek","lastName":"Maurya","email":"abhishekmaurya14112002@gmail.com","password":"12345678abhi","confirmPassword":"12345678abhi","state":"Mizoram","district":"Saitual","farmType":"crop","farmSize":"4"}
+[28-Nov-2024 00:00:20 Europe/Berlin] Decoded data: Array
+(
+    [firstName] => Abhishek
+    [lastName] => Maurya
+    [email] => abhishekmaurya14112002@gmail.com
+    [password] => 12345678abhi
+    [confirmPassword] => 12345678abhi
+    [state] => Mizoram
+    [district] => Saitual
+    [farmType] => crop
+    [farmSize] => 4
+)
+
+[28-Nov-2024 00:00:20 Europe/Berlin] Attempting database connection
+[28-Nov-2024 00:00:20 Europe/Berlin] Test user created successfully
+[28-Nov-2024 00:00:20 Europe/Berlin] Database connection successful
+[28-Nov-2024 00:00:20 Europe/Berlin] Attempting to insert new user
+[28-Nov-2024 00:00:20 Europe/Berlin] User inserted successfully
+[28-Nov-2024 00:00:20 Europe/Berlin] New user ID: 6
+[28-Nov-2024 00:00:20 Europe/Berlin] Sending response: {"success":true,"message":"Account created successfully","data":{"id":"6","first_name":"Abhishek","last_name":"Maurya","email":"abhishekmaurya14112002@gmail.com","state":"Mizoram","district":"Saitual","farm_type":"crop","farm_size":"4","role":"user"}}
+[28-Nov-2024 06:31:22 Europe/Berlin] Request received at signup_handler.php
+[28-Nov-2024 06:31:22 Europe/Berlin] Request method: POST
+[28-Nov-2024 06:31:22 Europe/Berlin] Received raw data: {"firstName":"Abhishek","lastName":"Maurya","email":"abhishekmaurya14112002@gmail.com","password":"12345678abhi","confirmPassword":"12345678abhi","state":"Madhya Pradesh","district":"Damoh","farmType":"crop","farmSize":"5"}
+[28-Nov-2024 06:31:22 Europe/Berlin] Decoded data: Array
+(
+    [firstName] => Abhishek
+    [lastName] => Maurya
+    [email] => abhishekmaurya14112002@gmail.com
+    [password] => 12345678abhi
+    [confirmPassword] => 12345678abhi
+    [state] => Madhya Pradesh
+    [district] => Damoh
+    [farmType] => crop
+    [farmSize] => 5
+)
+
+[28-Nov-2024 06:31:22 Europe/Berlin] Attempting database connection
+[28-Nov-2024 06:31:22 Europe/Berlin] Database connection successful
+[28-Nov-2024 06:31:22 Europe/Berlin] Attempting to insert new user
+[28-Nov-2024 06:31:22 Europe/Berlin] User inserted successfully
+[28-Nov-2024 06:31:22 Europe/Berlin] New user ID: 7
+[28-Nov-2024 06:31:22 Europe/Berlin] Sending response: {"success":true,"message":"Account created successfully","data":{"id":"7","first_name":"Abhishek","last_name":"Maurya","email":"abhishekmaurya14112002@gmail.com","state":"Madhya Pradesh","district":"Damoh","farm_type":"crop","farm_size":"5","role":"user"}}
+[28-Nov-2024 07:43:59 Europe/Berlin] Request received at signup_handler.php
+[28-Nov-2024 07:43:59 Europe/Berlin] Request method: POST
+[28-Nov-2024 07:43:59 Europe/Berlin] Received raw data: {"firstName":"Abhishek","lastName":"Maurya","email":"abhishekmaurya14112002@gmail.com","password":"12345678abhi","confirmPassword":"12345678abhi","state":"Madhya Pradesh","district":"Dhar","farmType":"crop","farmSize":"3"}
+[28-Nov-2024 07:43:59 Europe/Berlin] Decoded data: Array
+(
+    [firstName] => Abhishek
+    [lastName] => Maurya
+    [email] => abhishekmaurya14112002@gmail.com
+    [password] => 12345678abhi
+    [confirmPassword] => 12345678abhi
+    [state] => Madhya Pradesh
+    [district] => Dhar
+    [farmType] => crop
+    [farmSize] => 3
+)
+
+[28-Nov-2024 07:43:59 Europe/Berlin] Attempting database connection
+[28-Nov-2024 07:43:59 Europe/Berlin] Database connection successful
+[28-Nov-2024 07:43:59 Europe/Berlin] Attempting to insert new user
+[28-Nov-2024 07:43:59 Europe/Berlin] User inserted successfully
+[28-Nov-2024 07:43:59 Europe/Berlin] New user ID: 8
+[28-Nov-2024 07:43:59 Europe/Berlin] Sending response: {"success":true,"message":"Account created successfully","data":{"id":"8","first_name":"Abhishek","last_name":"Maurya","email":"abhishekmaurya14112002@gmail.com","state":"Madhya Pradesh","district":"Dhar","farm_type":"crop","farm_size":"3","role":"user"}}
+[28-Nov-2024 07:47:53 Europe/Berlin] Request received at signup_handler.php
+[28-Nov-2024 07:47:53 Europe/Berlin] Request method: POST
+[28-Nov-2024 07:47:53 Europe/Berlin] Received raw data: {"firstName":"Abhishek","lastName":"Maurya","email":"abhishekmaurya14112002@gmail.com","password":"12345678abhi","confirmPassword":"12345678abhi","state":"Madhya Pradesh","district":"Bhopal","farmType":"crop","farmSize":"3"}
+[28-Nov-2024 07:47:53 Europe/Berlin] Decoded data: Array
+(
+    [firstName] => Abhishek
+    [lastName] => Maurya
+    [email] => abhishekmaurya14112002@gmail.com
+    [password] => 12345678abhi
+    [confirmPassword] => 12345678abhi
+    [state] => Madhya Pradesh
+    [district] => Bhopal
+    [farmType] => crop
+    [farmSize] => 3
+)
+
+[28-Nov-2024 07:47:53 Europe/Berlin] Attempting database connection
+[28-Nov-2024 07:47:53 Europe/Berlin] Database connection successful
+[28-Nov-2024 07:47:53 Europe/Berlin] Attempting to insert new user
+[28-Nov-2024 07:47:53 Europe/Berlin] User inserted successfully
+[28-Nov-2024 07:47:53 Europe/Berlin] New user ID: 10
+[28-Nov-2024 07:47:53 Europe/Berlin] Sending response: {"success":true,"message":"Account created successfully","data":{"id":"10","first_name":"Abhishek","last_name":"Maurya","email":"abhishekmaurya14112002@gmail.com","state":"Madhya Pradesh","district":"Bhopal","farm_type":"crop","farm_size":"3","role":"user"}}
+[28-Nov-2024 07:48:55 Europe/Berlin] Request received at signup_handler.php
+[28-Nov-2024 07:48:55 Europe/Berlin] Request method: POST
+[28-Nov-2024 07:48:55 Europe/Berlin] Received raw data: {"firstName":"sumit","lastName":"Maurya","email":"abhishekmaurya14112002@gmail.com","password":"12345678abhi","confirmPassword":"12345678abhi","state":"Madhya Pradesh","district":"Guna","farmType":"crop","farmSize":"2"}
+[28-Nov-2024 07:48:55 Europe/Berlin] Decoded data: Array
+(
+    [firstName] => sumit
+    [lastName] => Maurya
+    [email] => abhishekmaurya14112002@gmail.com
+    [password] => 12345678abhi
+    [confirmPassword] => 12345678abhi
+    [state] => Madhya Pradesh
+    [district] => Guna
+    [farmType] => crop
+    [farmSize] => 2
+)
+
+[28-Nov-2024 07:48:55 Europe/Berlin] Attempting database connection
+[28-Nov-2024 07:48:55 Europe/Berlin] Database connection successful
+[28-Nov-2024 07:48:56 Europe/Berlin] Attempting to insert new user
+[28-Nov-2024 07:48:56 Europe/Berlin] User inserted successfully
+[28-Nov-2024 07:48:56 Europe/Berlin] New user ID: 11
+[28-Nov-2024 07:48:56 Europe/Berlin] Sending response: {"success":true,"message":"Account created successfully","data":{"id":"11","first_name":"sumit","last_name":"Maurya","email":"abhishekmaurya14112002@gmail.com","state":"Madhya Pradesh","district":"Guna","farm_type":"crop","farm_size":"2","role":"user"}}
+[28-Nov-2024 07:53:24 Europe/Berlin] Request received at signup_handler.php
+[28-Nov-2024 07:53:24 Europe/Berlin] Request method: POST
+[28-Nov-2024 07:53:24 Europe/Berlin] Received raw data: {"firstName":"Abhishek","lastName":"Maurya","email":"abhishekmaurya14112002@gmail.com","password":"12345678abhi","confirmPassword":"12345678abhi","state":"Madhya Pradesh","district":"Dhar","farmType":"crop","farmSize":"2"}
+[28-Nov-2024 07:53:24 Europe/Berlin] Decoded data: Array
+(
+    [firstName] => Abhishek
+    [lastName] => Maurya
+    [email] => abhishekmaurya14112002@gmail.com
+    [password] => 12345678abhi
+    [confirmPassword] => 12345678abhi
+    [state] => Madhya Pradesh
+    [district] => Dhar
+    [farmType] => crop
+    [farmSize] => 2
+)
+
+[28-Nov-2024 07:53:24 Europe/Berlin] Attempting database connection
+[28-Nov-2024 07:53:24 Europe/Berlin] Database connection successful
+[28-Nov-2024 07:53:24 Europe/Berlin] Attempting to insert new user
+[28-Nov-2024 07:53:24 Europe/Berlin] User inserted successfully
+[28-Nov-2024 07:53:24 Europe/Berlin] New user ID: 12
+[28-Nov-2024 07:53:24 Europe/Berlin] Sending response: {"success":true,"message":"Account created successfully","data":{"id":"12","first_name":"Abhishek","last_name":"Maurya","email":"abhishekmaurya14112002@gmail.com","state":"Madhya Pradesh","district":"Dhar","farm_type":"crop","farm_size":"2","role":"user"}}
+[28-Nov-2024 07:57:09 Europe/Berlin] Request received at signup_handler.php
+[28-Nov-2024 07:57:09 Europe/Berlin] Request method: POST
+[28-Nov-2024 07:57:09 Europe/Berlin] Received raw data: {"firstName":"Abhishek","lastName":"Maurya","email":"abhishekmaurya14112002@gmail.com","password":"12345678abhi","confirmPassword":"12345678abhi","state":"Madhya Pradesh","district":"Dhar","farmType":"crop","farmSize":"2"}
+[28-Nov-2024 07:57:09 Europe/Berlin] Decoded data: Array
+(
+    [firstName] => Abhishek
+    [lastName] => Maurya
+    [email] => abhishekmaurya14112002@gmail.com
+    [password] => 12345678abhi
+    [confirmPassword] => 12345678abhi
+    [state] => Madhya Pradesh
+    [district] => Dhar
+    [farmType] => crop
+    [farmSize] => 2
+)
+
+[28-Nov-2024 07:57:09 Europe/Berlin] Attempting database connection
+[28-Nov-2024 07:57:09 Europe/Berlin] Database connection successful
+[28-Nov-2024 07:57:09 Europe/Berlin] Attempting to insert new user
+[28-Nov-2024 07:57:09 Europe/Berlin] User inserted successfully
+[28-Nov-2024 07:57:09 Europe/Berlin] New user ID: 13
+[28-Nov-2024 07:57:09 Europe/Berlin] Sending response: {"success":true,"message":"Account created successfully","data":{"id":"13","first_name":"Abhishek","last_name":"Maurya","email":"abhishekmaurya14112002@gmail.com","state":"Madhya Pradesh","district":"Dhar","farm_type":"crop","farm_size":"2","role":"user"}}
+[28-Nov-2024 08:01:20 Europe/Berlin] Request received at signup_handler.php
+[28-Nov-2024 08:01:20 Europe/Berlin] Request method: POST
+[28-Nov-2024 08:01:20 Europe/Berlin] Received raw data: {"firstName":"Abhishek","lastName":"Maurya","email":"abhishekmaurya14112002@gmail.com","password":"12345678abhi","confirmPassword":"12345678abhi","state":"Madhya Pradesh","district":"Damoh","farmType":"crop","farmSize":"2"}
+[28-Nov-2024 08:01:20 Europe/Berlin] Decoded data: Array
+(
+    [firstName] => Abhishek
+    [lastName] => Maurya
+    [email] => abhishekmaurya14112002@gmail.com
+    [password] => 12345678abhi
+    [confirmPassword] => 12345678abhi
+    [state] => Madhya Pradesh
+    [district] => Damoh
+    [farmType] => crop
+    [farmSize] => 2
+)
+
+[28-Nov-2024 08:01:20 Europe/Berlin] Attempting database connection
+[28-Nov-2024 08:01:20 Europe/Berlin] Database connection successful
+[28-Nov-2024 08:01:20 Europe/Berlin] Email already exists: abhishekmaurya14112002@gmail.com
+[28-Nov-2024 08:01:20 Europe/Berlin] Signup error: Email already exists
+[28-Nov-2024 08:01:20 Europe/Berlin] Sending response: {"success":false,"message":"Email already exists","data":null}
+[28-Nov-2024 08:01:35 Europe/Berlin] Request received at signup_handler.php
+[28-Nov-2024 08:01:35 Europe/Berlin] Request method: POST
+[28-Nov-2024 08:01:35 Europe/Berlin] Received raw data: {"firstName":"Abhishek","lastName":"Maurya","email":"abhishekmaurya14112002@gmail.com","password":"12345678abhi","confirmPassword":"12345678abhi","state":"Madhya Pradesh","district":"Damoh","farmType":"crop","farmSize":"2"}
+[28-Nov-2024 08:01:35 Europe/Berlin] Decoded data: Array
+(
+    [firstName] => Abhishek
+    [lastName] => Maurya
+    [email] => abhishekmaurya14112002@gmail.com
+    [password] => 12345678abhi
+    [confirmPassword] => 12345678abhi
+    [state] => Madhya Pradesh
+    [district] => Damoh
+    [farmType] => crop
+    [farmSize] => 2
+)
+
+[28-Nov-2024 08:01:35 Europe/Berlin] Attempting database connection
+[28-Nov-2024 08:01:35 Europe/Berlin] Database connection successful
+[28-Nov-2024 08:01:35 Europe/Berlin] Attempting to insert new user
+[28-Nov-2024 08:01:35 Europe/Berlin] User inserted successfully
+[28-Nov-2024 08:01:35 Europe/Berlin] New user ID: 14
+[28-Nov-2024 08:01:35 Europe/Berlin] Sending response: {"success":true,"message":"Account created successfully","data":{"id":"14","first_name":"Abhishek","last_name":"Maurya","email":"abhishekmaurya14112002@gmail.com","state":"Madhya Pradesh","district":"Damoh","farm_type":"crop","farm_size":"2","role":"user"}}
+[28-Nov-2024 08:05:22 Europe/Berlin] Request received at signup_handler.php
+[28-Nov-2024 08:05:22 Europe/Berlin] Request method: POST
+[28-Nov-2024 08:05:22 Europe/Berlin] Received raw data: {"firstName":"Abhishek","lastName":"Maurya","email":"abhishekmaurya14112002@gmail.com","password":"12345678abhi","confirmPassword":"12345678abhi","state":"Uttar Pradesh","district":"Varanasi","farmType":"livestock","farmSize":"21"}
+[28-Nov-2024 08:05:22 Europe/Berlin] Decoded data: Array
+(
+    [firstName] => Abhishek
+    [lastName] => Maurya
+    [email] => abhishekmaurya14112002@gmail.com
+    [password] => 12345678abhi
+    [confirmPassword] => 12345678abhi
+    [state] => Uttar Pradesh
+    [district] => Varanasi
+    [farmType] => livestock
+    [farmSize] => 21
+)
+
+[28-Nov-2024 08:05:22 Europe/Berlin] Attempting database connection
+[28-Nov-2024 08:05:22 Europe/Berlin] Database connection successful
+[28-Nov-2024 08:05:22 Europe/Berlin] Attempting to insert new user
+[28-Nov-2024 08:05:22 Europe/Berlin] User inserted successfully
+[28-Nov-2024 08:05:22 Europe/Berlin] New user ID: 15
+[28-Nov-2024 08:05:22 Europe/Berlin] Sending response: {"success":true,"message":"Account created successfully","data":{"id":"15","first_name":"Abhishek","last_name":"Maurya","email":"abhishekmaurya14112002@gmail.com","state":"Uttar Pradesh","district":"Varanasi","farm_type":"livestock","farm_size":"21","role":"user"}}
+[28-Nov-2024 08:09:19 Europe/Berlin] Login attempt - Raw input: {"email":"abhishekmaurya14112002@gmail.com","password":"12345678abhi"}
+[28-Nov-2024 08:09:20 Europe/Berlin] Test user created successfully
+[28-Nov-2024 08:09:20 Europe/Berlin] Login attempt for email: abhishekmaurya14112002@gmail.com - User found: No
+[28-Nov-2024 08:09:20 Europe/Berlin] Login failed for email: abhishekmaurya14112002@gmail.com - User not found
+[28-Nov-2024 08:09:20 Europe/Berlin] Login error: Invalid email or password
+[28-Nov-2024 08:09:41 Europe/Berlin] Signup attempt - Raw input: {"firstName":"Abhishek","lastName":"Maurya","email":"abhishekmaurya14112002@gmail.com","password":"12345678abhi","confirmPassword":"12345678abhi","state":"Madhya Pradesh","district":"Dewas","farmType":"crop","farmSize":"1"}
+[28-Nov-2024 08:09:41 Europe/Berlin] User created successfully: abhishekmaurya14112002@gmail.com
+[28-Nov-2024 08:10:19 Europe/Berlin] Login attempt - Raw input: {"email":"abhishekmaurya14112002@gmail.com","password":"12345678abhi"}
+[28-Nov-2024 08:10:19 Europe/Berlin] Login attempt for email: abhishekmaurya14112002@gmail.com - User found: Yes
+[28-Nov-2024 08:10:19 Europe/Berlin] Login successful for email: abhishekmaurya14112002@gmail.com
+[28-Nov-2024 08:10:35 Europe/Berlin] Login attempt - Raw input: {"email":"abhishekmaurya14112002@gmail.com","password":"12345678abhi"}
+[28-Nov-2024 08:10:35 Europe/Berlin] Login attempt for email: abhishekmaurya14112002@gmail.com - User found: Yes
+[28-Nov-2024 08:10:35 Europe/Berlin] Login successful for email: abhishekmaurya14112002@gmail.com
+[28-Nov-2024 08:11:17 Europe/Berlin] Signup attempt - Raw input: {"firstName":"awsdaqwd","lastName":"Maurya","email":"abhishekmaurya14112002@gmail.com","password":"12345678abhi","confirmPassword":"12345678abhi","state":"Madhya Pradesh","district":"Bhind","farmType":"crop","farmSize":"5"}
+[28-Nov-2024 08:11:17 Europe/Berlin] Email already exists: abhishekmaurya14112002@gmail.com
+[28-Nov-2024 08:11:17 Europe/Berlin] Signup error: Email already exists
+[28-Nov-2024 08:11:27 Europe/Berlin] Signup attempt - Raw input: {"firstName":"awsdaqwd","lastName":"Maurya","email":"abhishekmaurya1411@gmail.com","password":"12345678abhi","confirmPassword":"12345678abhi","state":"Madhya Pradesh","district":"Bhind","farmType":"crop","farmSize":"5"}
+[28-Nov-2024 08:11:27 Europe/Berlin] User created successfully: abhishekmaurya1411@gmail.com
+[28-Nov-2024 08:13:17 Europe/Berlin] Login attempt - Raw input: {"email":"abhishekmaurya14112002@gmail.com","password":"12345678abhi"}
+[28-Nov-2024 08:13:17 Europe/Berlin] Login attempt for email: abhishekmaurya14112002@gmail.com - User found: Yes
+[28-Nov-2024 08:13:18 Europe/Berlin] Login successful for email: abhishekmaurya14112002@gmail.com
+[28-Nov-2024 08:14:02 Europe/Berlin] Login attempt - Raw input: {"email":"abhishekmaurya1411@gmail.com","password":"12345678abhi"}
+[28-Nov-2024 08:14:02 Europe/Berlin] Login attempt for email: abhishekmaurya1411@gmail.com - User found: Yes
+[28-Nov-2024 08:14:03 Europe/Berlin] Login successful for email: abhishekmaurya1411@gmail.com
+[28-Nov-2024 08:15:13 Europe/Berlin] Login attempt - Raw input: {"email":"abhishekmaurya14112002@gmail.com","password":"12345678abhi"}
+[28-Nov-2024 08:15:13 Europe/Berlin] Login attempt for email: abhishekmaurya14112002@gmail.com - User found: No
+[28-Nov-2024 08:15:13 Europe/Berlin] Login failed for email: abhishekmaurya14112002@gmail.com - User not found
+[28-Nov-2024 08:15:13 Europe/Berlin] Login error: Invalid email or password
+[28-Nov-2024 08:15:32 Europe/Berlin] Signup attempt - Raw input: {"firstName":"suniyur","lastName":"Maurya","email":"abhishekmaurya14112002@gmail.com","password":"12345678abhi","confirmPassword":"12345678abhi","state":"Madhya Pradesh","district":"Bhopal","farmType":"organic","farmSize":"4"}
+[28-Nov-2024 08:15:33 Europe/Berlin] User created successfully: abhishekmaurya14112002@gmail.com
+[28-Nov-2024 08:15:57 Europe/Berlin] Login attempt - Raw input: {"email":"abhishekmaurya14112002@gmail.com","password":"12345678abhi"}
+[28-Nov-2024 08:15:57 Europe/Berlin] Login attempt for email: abhishekmaurya14112002@gmail.com - User found: Yes
+[28-Nov-2024 08:15:57 Europe/Berlin] Login successful for email: abhishekmaurya14112002@gmail.com
+[28-Nov-2024 08:16:33 Europe/Berlin] Login attempt - Raw input: {"email":"abhishekmaurya14112002@gmail.com","password":"12345678abhi"}
+[28-Nov-2024 08:16:34 Europe/Berlin] Test user created successfully
+[28-Nov-2024 08:16:34 Europe/Berlin] Login attempt for email: abhishekmaurya14112002@gmail.com - User found: No
+[28-Nov-2024 08:16:34 Europe/Berlin] Login failed for email: abhishekmaurya14112002@gmail.com - User not found
+[28-Nov-2024 08:16:34 Europe/Berlin] Login error: Invalid email or password
+[28-Nov-2024 08:16:43 Europe/Berlin] Signup attempt - Raw input: {"firstName":"Abhishek","lastName":"Maurya","email":"abhishekmaurya14112002@gmail.com","password":"12345678abhi","confirmPassword":"12345678abhi","state":"Madhya Pradesh","district":"Dindori","farmType":"crop","farmSize":"2"}
+[28-Nov-2024 08:16:43 Europe/Berlin] User created successfully: abhishekmaurya14112002@gmail.com
+[28-Nov-2024 08:19:41 Europe/Berlin] Login attempt - Raw input: {"email":"abhishekmaurya14112002@gmail.com","password":"12345678abhi"}
+[28-Nov-2024 08:19:41 Europe/Berlin] Login attempt for email: abhishekmaurya14112002@gmail.com - User found: Yes
+[28-Nov-2024 08:19:41 Europe/Berlin] Login successful for email: abhishekmaurya14112002@gmail.com
+[28-Nov-2024 08:19:57 Europe/Berlin] Login attempt - Raw input: {"email":"abhishekmaurya14112002@gmail.com","password":"12345678abhi"}
+[28-Nov-2024 08:19:57 Europe/Berlin] Login attempt for email: abhishekmaurya14112002@gmail.com - User found: Yes
+[28-Nov-2024 08:19:57 Europe/Berlin] Login successful for email: abhishekmaurya14112002@gmail.com
+[28-Nov-2024 08:20:42 Europe/Berlin] Login attempt - Raw input: {"email":"abhishekmaurya14112002@gmail.com","password":"12345678abhi"}
+[28-Nov-2024 08:20:42 Europe/Berlin] Login attempt for email: abhishekmaurya14112002@gmail.com - User found: Yes
+[28-Nov-2024 08:20:43 Europe/Berlin] Login successful for email: abhishekmaurya14112002@gmail.com
+[28-Nov-2024 08:20:44 Europe/Berlin] Login attempt - Raw input: {"email":"abhishekmaurya14112002@gmail.com","password":"12345678abhi"}
+[28-Nov-2024 08:20:44 Europe/Berlin] Login attempt for email: abhishekmaurya14112002@gmail.com - User found: Yes
+[28-Nov-2024 08:20:44 Europe/Berlin] Login successful for email: abhishekmaurya14112002@gmail.com
+[28-Nov-2024 08:20:45 Europe/Berlin] Login attempt - Raw input: {"email":"abhishekmaurya14112002@gmail.com","password":"12345678abhi"}
+[28-Nov-2024 08:20:45 Europe/Berlin] Login attempt for email: abhishekmaurya14112002@gmail.com - User found: Yes
+[28-Nov-2024 08:20:45 Europe/Berlin] Login successful for email: abhishekmaurya14112002@gmail.com
+[28-Nov-2024 08:21:08 Europe/Berlin] Signup attempt - Raw input: {"firstName":"Abhishek","lastName":"Maurya","email":"abhishekmaurya14112002@gmail.com","password":"12345678abhi","confirmPassword":"12345678abhi","state":"Madhya Pradesh","district":"Dindori","farmType":"crop","farmSize":"2"}
+[28-Nov-2024 08:21:08 Europe/Berlin] User created successfully: abhishekmaurya14112002@gmail.com
+[28-Nov-2024 08:21:51 Europe/Berlin] Login attempt - Raw input: {"email":"abhishekmaurya14112002@gmail.com","password":"12345678abhi"}
+[28-Nov-2024 08:21:51 Europe/Berlin] Login attempt for email: abhishekmaurya14112002@gmail.com - User found: Yes
+[28-Nov-2024 08:21:51 Europe/Berlin] Login successful for email: abhishekmaurya14112002@gmail.com
+[28-Nov-2024 08:22:04 Europe/Berlin] Login attempt - Raw input: {"email":"abhishekmaurya14112002@gmail.com","password":"12345678abhi"}
+[28-Nov-2024 08:22:04 Europe/Berlin] Test user created successfully
+[28-Nov-2024 08:22:04 Europe/Berlin] Login attempt for email: abhishekmaurya14112002@gmail.com - User found: No
+[28-Nov-2024 08:22:04 Europe/Berlin] Login failed for email: abhishekmaurya14112002@gmail.com - User not found
+[28-Nov-2024 08:22:04 Europe/Berlin] Login error: Invalid email or password
+[28-Nov-2024 08:22:05 Europe/Berlin] Login attempt - Raw input: {"email":"abhishekmaurya14112002@gmail.com","password":"12345678abhi"}
+[28-Nov-2024 08:22:05 Europe/Berlin] Login attempt for email: abhishekmaurya14112002@gmail.com - User found: No
+[28-Nov-2024 08:22:05 Europe/Berlin] Login failed for email: abhishekmaurya14112002@gmail.com - User not found
+[28-Nov-2024 08:22:05 Europe/Berlin] Login error: Invalid email or password
+[28-Nov-2024 08:22:06 Europe/Berlin] Login attempt - Raw input: {"email":"abhishekmaurya14112002@gmail.com","password":"12345678abhi"}
+[28-Nov-2024 08:22:06 Europe/Berlin] Login attempt for email: abhishekmaurya14112002@gmail.com - User found: No
+[28-Nov-2024 08:22:06 Europe/Berlin] Login failed for email: abhishekmaurya14112002@gmail.com - User not found
+[28-Nov-2024 08:22:06 Europe/Berlin] Login error: Invalid email or password
+[28-Nov-2024 08:22:06 Europe/Berlin] Login attempt - Raw input: {"email":"abhishekmaurya14112002@gmail.com","password":"12345678abhi"}
+[28-Nov-2024 08:22:06 Europe/Berlin] Login attempt for email: abhishekmaurya14112002@gmail.com - User found: No
+[28-Nov-2024 08:22:06 Europe/Berlin] Login failed for email: abhishekmaurya14112002@gmail.com - User not found
+[28-Nov-2024 08:22:06 Europe/Berlin] Login error: Invalid email or password
+[28-Nov-2024 08:22:06 Europe/Berlin] Login attempt - Raw input: {"email":"abhishekmaurya14112002@gmail.com","password":"12345678abhi"}
+[28-Nov-2024 08:22:06 Europe/Berlin] Login attempt for email: abhishekmaurya14112002@gmail.com - User found: No
+[28-Nov-2024 08:22:06 Europe/Berlin] Login failed for email: abhishekmaurya14112002@gmail.com - User not found
+[28-Nov-2024 08:22:06 Europe/Berlin] Login error: Invalid email or password
+[28-Nov-2024 08:22:06 Europe/Berlin] Login attempt - Raw input: {"email":"abhishekmaurya14112002@gmail.com","password":"12345678abhi"}
+[28-Nov-2024 08:22:06 Europe/Berlin] Login attempt for email: abhishekmaurya14112002@gmail.com - User found: No
+[28-Nov-2024 08:22:06 Europe/Berlin] Login failed for email: abhishekmaurya14112002@gmail.com - User not found
+[28-Nov-2024 08:22:06 Europe/Berlin] Login error: Invalid email or password
+[28-Nov-2024 08:22:07 Europe/Berlin] Login attempt - Raw input: {"email":"abhishekmaurya14112002@gmail.com","password":"12345678abhi"}
+[28-Nov-2024 08:22:07 Europe/Berlin] Login attempt for email: abhishekmaurya14112002@gmail.com - User found: No
+[28-Nov-2024 08:22:07 Europe/Berlin] Login failed for email: abhishekmaurya14112002@gmail.com - User not found
+[28-Nov-2024 08:22:07 Europe/Berlin] Login error: Invalid email or password
+[28-Nov-2024 08:22:07 Europe/Berlin] Login attempt - Raw input: {"email":"abhishekmaurya14112002@gmail.com","password":"12345678abhi"}
+[28-Nov-2024 08:22:07 Europe/Berlin] Login attempt for email: abhishekmaurya14112002@gmail.com - User found: No
+[28-Nov-2024 08:22:07 Europe/Berlin] Login failed for email: abhishekmaurya14112002@gmail.com - User not found
+[28-Nov-2024 08:22:07 Europe/Berlin] Login error: Invalid email or password
+[28-Nov-2024 08:22:07 Europe/Berlin] Login attempt - Raw input: {"email":"abhishekmaurya14112002@gmail.com","password":"12345678abhi"}
+[28-Nov-2024 08:22:07 Europe/Berlin] Login attempt for email: abhishekmaurya14112002@gmail.com - User found: No
+[28-Nov-2024 08:22:07 Europe/Berlin] Login failed for email: abhishekmaurya14112002@gmail.com - User not found
+[28-Nov-2024 08:22:07 Europe/Berlin] Login error: Invalid email or password
+[28-Nov-2024 08:22:07 Europe/Berlin] Login attempt - Raw input: {"email":"abhishekmaurya14112002@gmail.com","password":"12345678abhi"}
+[28-Nov-2024 08:22:07 Europe/Berlin] Login attempt for email: abhishekmaurya14112002@gmail.com - User found: No
+[28-Nov-2024 08:22:07 Europe/Berlin] Login failed for email: abhishekmaurya14112002@gmail.com - User not found
+[28-Nov-2024 08:22:07 Europe/Berlin] Login error: Invalid email or password
+[28-Nov-2024 08:22:08 Europe/Berlin] Login attempt - Raw input: {"email":"abhishekmaurya14112002@gmail.com","password":"12345678abhi"}
+[28-Nov-2024 08:22:08 Europe/Berlin] Login attempt for email: abhishekmaurya14112002@gmail.com - User found: No
+[28-Nov-2024 08:22:08 Europe/Berlin] Login failed for email: abhishekmaurya14112002@gmail.com - User not found
+[28-Nov-2024 08:22:08 Europe/Berlin] Login error: Invalid email or password
+[28-Nov-2024 08:22:08 Europe/Berlin] Login attempt - Raw input: {"email":"abhishekmaurya14112002@gmail.com","password":"12345678abhi"}
+[28-Nov-2024 08:22:08 Europe/Berlin] Login attempt for email: abhishekmaurya14112002@gmail.com - User found: No
+[28-Nov-2024 08:22:08 Europe/Berlin] Login failed for email: abhishekmaurya14112002@gmail.com - User not found
+[28-Nov-2024 08:22:08 Europe/Berlin] Login error: Invalid email or password
+[28-Nov-2024 08:22:11 Europe/Berlin] Login attempt - Raw input: {"email":"abhishekmaurya14112002@gmail.com","password":"12345678abhi"}
+[28-Nov-2024 08:22:11 Europe/Berlin] Login attempt for email: abhishekmaurya14112002@gmail.com - User found: No
+[28-Nov-2024 08:22:11 Europe/Berlin] Login failed for email: abhishekmaurya14112002@gmail.com - User not found
+[28-Nov-2024 08:22:11 Europe/Berlin] Login error: Invalid email or password
+[28-Nov-2024 08:22:23 Europe/Berlin] Signup attempt - Raw input: {"firstName":"Abhishek","lastName":"Maurya","email":"abhishekmaurya14112002@gmail.com","password":"12345678abhi","confirmPassword":"12345678abhi","state":"Madhya Pradesh","district":"Gwalior","farmType":"livestock","farmSize":"2"}
+[28-Nov-2024 08:22:23 Europe/Berlin] User created successfully: abhishekmaurya14112002@gmail.com
+[28-Nov-2024 08:22:43 Europe/Berlin] Login attempt - Raw input: {"email":"abhishekmaurya14112002@gmail.com","password":"12345678abhi"}
+[28-Nov-2024 08:22:43 Europe/Berlin] Login attempt for email: abhishekmaurya14112002@gmail.com - User found: Yes
+[28-Nov-2024 08:22:43 Europe/Berlin] Login successful for email: abhishekmaurya14112002@gmail.com
+[28-Nov-2024 08:27:56 Europe/Berlin] Login attempt - Raw input: {"email":"abhishekmaurya14112002@gmail.com","password":"12345678abhi"}
+[28-Nov-2024 08:27:56 Europe/Berlin] Login attempt for email: abhishekmaurya14112002@gmail.com - User found: Yes
+[28-Nov-2024 08:27:56 Europe/Berlin] Login successful for email: abhishekmaurya14112002@gmail.com
+[28-Nov-2024 08:27:58 Europe/Berlin] Login attempt - Raw input: {"email":"abhishekmaurya14112002@gmail.com","password":"12345678abhi"}
+[28-Nov-2024 08:27:58 Europe/Berlin] Login attempt for email: abhishekmaurya14112002@gmail.com - User found: Yes
+[28-Nov-2024 08:27:58 Europe/Berlin] Login successful for email: abhishekmaurya14112002@gmail.com
+[28-Nov-2024 08:27:59 Europe/Berlin] Login attempt - Raw input: {"email":"abhishekmaurya14112002@gmail.com","password":"12345678abhi"}
+[28-Nov-2024 08:27:59 Europe/Berlin] Login attempt for email: abhishekmaurya14112002@gmail.com - User found: Yes
+[28-Nov-2024 08:27:59 Europe/Berlin] Login successful for email: abhishekmaurya14112002@gmail.com
+[28-Nov-2024 08:28:00 Europe/Berlin] Login attempt - Raw input: {"email":"abhishekmaurya14112002@gmail.com","password":"12345678abhi"}
+[28-Nov-2024 08:28:00 Europe/Berlin] Login attempt for email: abhishekmaurya14112002@gmail.com - User found: Yes
+[28-Nov-2024 08:28:00 Europe/Berlin] Login successful for email: abhishekmaurya14112002@gmail.com
+[28-Nov-2024 08:28:01 Europe/Berlin] Login attempt - Raw input: {"email":"abhishekmaurya14112002@gmail.com","password":"12345678abhi"}
+[28-Nov-2024 08:28:01 Europe/Berlin] Login attempt for email: abhishekmaurya14112002@gmail.com - User found: Yes
+[28-Nov-2024 08:28:01 Europe/Berlin] Login successful for email: abhishekmaurya14112002@gmail.com
+[28-Nov-2024 08:28:02 Europe/Berlin] Login attempt - Raw input: {"email":"abhishekmaurya14112002@gmail.com","password":"12345678abhi"}
+[28-Nov-2024 08:28:02 Europe/Berlin] Login attempt for email: abhishekmaurya14112002@gmail.com - User found: Yes
+[28-Nov-2024 08:28:02 Europe/Berlin] Login successful for email: abhishekmaurya14112002@gmail.com
+[28-Nov-2024 08:28:03 Europe/Berlin] Login attempt - Raw input: {"email":"abhishekmaurya14112002@gmail.com","password":"12345678abhi"}
+[28-Nov-2024 08:28:03 Europe/Berlin] Login attempt for email: abhishekmaurya14112002@gmail.com - User found: Yes
+[28-Nov-2024 08:28:03 Europe/Berlin] Login successful for email: abhishekmaurya14112002@gmail.com
+[28-Nov-2024 08:28:04 Europe/Berlin] Login attempt - Raw input: {"email":"abhishekmaurya14112002@gmail.com","password":"12345678abhi"}
+[28-Nov-2024 08:28:04 Europe/Berlin] Login attempt for email: abhishekmaurya14112002@gmail.com - User found: Yes
+[28-Nov-2024 08:28:04 Europe/Berlin] Login successful for email: abhishekmaurya14112002@gmail.com
+[28-Nov-2024 08:28:14 Europe/Berlin] Login attempt - Raw input: {"email":"abhishekmaurya14112002@gmail.com","password":"12345678abhi"}
+[28-Nov-2024 08:28:14 Europe/Berlin] Login attempt for email: abhishekmaurya14112002@gmail.com - User found: Yes
+[28-Nov-2024 08:28:14 Europe/Berlin] Login successful for email: abhishekmaurya14112002@gmail.com
+[28-Nov-2024 08:28:26 Europe/Berlin] Login attempt - Raw input: {"email":"abhishekmaurya14112002@gmail.com","password":"12345678abhi"}
+[28-Nov-2024 08:28:26 Europe/Berlin] Login attempt for email: abhishekmaurya14112002@gmail.com - User found: No
+[28-Nov-2024 08:28:26 Europe/Berlin] Login failed for email: abhishekmaurya14112002@gmail.com - User not found
+[28-Nov-2024 08:28:26 Europe/Berlin] Login error: Invalid email or password
+[28-Nov-2024 08:28:39 Europe/Berlin] Signup attempt - Raw input: {"firstName":"Abhishek","lastName":"Maurya","email":"abhishekmaurya14112002@gmail.com","password":"12345678abhi","confirmPassword":"12345678abhi","state":"Madhya Pradesh","district":"Gwalior","farmType":"crop","farmSize":"2"}
+[28-Nov-2024 08:28:39 Europe/Berlin] User created successfully: abhishekmaurya14112002@gmail.com
+[28-Nov-2024 08:29:28 Europe/Berlin] Login attempt - Raw input: {"email":"abhishekmaurya14112002@gmail.com","password":"12345678abhi"}
+[28-Nov-2024 08:29:28 Europe/Berlin] Login attempt for email: abhishekmaurya14112002@gmail.com - User found: Yes
+[28-Nov-2024 08:29:28 Europe/Berlin] Login successful for email: abhishekmaurya14112002@gmail.com
+[28-Nov-2024 08:29:56 Europe/Berlin] Login attempt - Raw input: {"email":"abhishekmaurya14112002@gmail.com","password":"12345678abhi"}
+[28-Nov-2024 08:29:56 Europe/Berlin] Login attempt for email: abhishekmaurya14112002@gmail.com - User found: No
+[28-Nov-2024 08:29:56 Europe/Berlin] Login failed for email: abhishekmaurya14112002@gmail.com - User not found
+[28-Nov-2024 08:29:56 Europe/Berlin] Login error: Invalid email or password
+[28-Nov-2024 08:29:57 Europe/Berlin] Login attempt - Raw input: {"email":"abhishekmaurya14112002@gmail.com","password":"12345678abhi"}
+[28-Nov-2024 08:29:57 Europe/Berlin] Login attempt for email: abhishekmaurya14112002@gmail.com - User found: No
+[28-Nov-2024 08:29:57 Europe/Berlin] Login failed for email: abhishekmaurya14112002@gmail.com - User not found
+[28-Nov-2024 08:29:57 Europe/Berlin] Login error: Invalid email or password
+[28-Nov-2024 08:30:06 Europe/Berlin] Signup attempt - Raw input: {"firstName":"Abhishek","lastName":"Maurya","email":"abhishekmaurya14112002@gmail.com","password":"12345678abhi","confirmPassword":"12345678abhi","state":"Madhya Pradesh","district":"Dindori","farmType":"crop","farmSize":"2"}
+[28-Nov-2024 08:30:07 Europe/Berlin] User created successfully: abhishekmaurya14112002@gmail.com
+[28-Nov-2024 08:42:04 Europe/Berlin] Login attempt - Raw input: {"email":"abhishekmaurya14112002@gmail.com","password":"12345678abhi"}
+[28-Nov-2024 08:42:04 Europe/Berlin] Login attempt for email: abhishekmaurya14112002@gmail.com - User found: No
+[28-Nov-2024 08:42:04 Europe/Berlin] Login failed for email: abhishekmaurya14112002@gmail.com - User not found
+[28-Nov-2024 08:42:04 Europe/Berlin] Login error: Invalid email or password
+[28-Nov-2024 08:42:19 Europe/Berlin] Signup attempt - Raw input: {"firstName":"Abhishek","lastName":"Maurya","email":"abhishekmaurya14112002@gmail.com","password":"12345678abhi","confirmPassword":"12345678abhi","state":"Madhya Pradesh","district":"Umaria","farmType":"livestock","farmSize":"2"}
+[28-Nov-2024 08:42:19 Europe/Berlin] User created successfully: abhishekmaurya14112002@gmail.com
+[28-Nov-2024 08:42:38 Europe/Berlin] Login attempt - Raw input: {"email":"abhishekmaurya14112002@gmail.com","password":"12345678abhi"}
+[28-Nov-2024 08:42:38 Europe/Berlin] Login attempt for email: abhishekmaurya14112002@gmail.com - User found: Yes
+[28-Nov-2024 08:42:39 Europe/Berlin] Login successful for email: abhishekmaurya14112002@gmail.com
+[28-Nov-2024 09:07:56 Europe/Berlin] Login attempt - Raw input: {"email":"abhishekmaurya14112002@gmail.com","password":"12345678abhi"}
+[28-Nov-2024 09:07:56 Europe/Berlin] Login attempt for email: abhishekmaurya14112002@gmail.com - User found: Yes
+[28-Nov-2024 09:07:56 Europe/Berlin] Login successful for email: abhishekmaurya14112002@gmail.com
+[28-Nov-2024 09:08:14 Europe/Berlin] Login attempt - Raw input: {"email":"abhishekmaurya14112002@gmail.com","password":"12345678abhi"}
+[28-Nov-2024 09:08:14 Europe/Berlin] Login attempt for email: abhishekmaurya14112002@gmail.com - User found: Yes
+[28-Nov-2024 09:08:14 Europe/Berlin] Login successful for email: abhishekmaurya14112002@gmail.com
+[28-Nov-2024 09:11:54 Europe/Berlin] Login attempt - Raw input: {"email":"abhishekmaurya14112002@gmail.com","password":"12345678abhi"}
+[28-Nov-2024 09:11:54 Europe/Berlin] Login attempt for email: abhishekmaurya14112002@gmail.com - User found: No
+[28-Nov-2024 09:11:54 Europe/Berlin] Login failed for email: abhishekmaurya14112002@gmail.com - User not found
+[28-Nov-2024 09:11:54 Europe/Berlin] Login error: Invalid email or password
+[28-Nov-2024 09:12:07 Europe/Berlin] Signup attempt - Raw input: {"firstName":"Abhishek","lastName":"Maurya","email":"abhishekmaurya14112002@gmail.com","password":"12345678abhi","confirmPassword":"12345678abhi","state":"Madhya Pradesh","district":"Dhar","farmType":"crop","farmSize":"2"}
+[28-Nov-2024 09:12:08 Europe/Berlin] User created successfully: abhishekmaurya14112002@gmail.com
+[28-Nov-2024 09:12:23 Europe/Berlin] Login attempt - Raw input: {"email":"abhishekmaurya14112002@gmail.com","password":"12345678abhi"}
+[28-Nov-2024 09:12:23 Europe/Berlin] Login attempt for email: abhishekmaurya14112002@gmail.com - User found: Yes
+[28-Nov-2024 09:12:23 Europe/Berlin] Login successful for email: abhishekmaurya14112002@gmail.com
+[28-Nov-2024 09:14:39 Europe/Berlin] Login attempt - Raw input: {"email":"abhishekmaurya14112002@gmail.com","password":"12345678abhi"}
+[28-Nov-2024 09:14:39 Europe/Berlin] Login attempt for email: abhishekmaurya14112002@gmail.com - User found: Yes
+[28-Nov-2024 09:14:40 Europe/Berlin] Login successful for email: abhishekmaurya14112002@gmail.com
+[28-Nov-2024 09:15:00 Europe/Berlin] Login attempt - Raw input: {"email":"abhishekmaurya14112002@gmail.com","password":"12345678abhi"}
+[28-Nov-2024 09:15:00 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in C:\xampp\htdocs\FarmCS\handlers\login_handler.php:63
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\FarmCS\handlers\login_handler.php on line 63
+[28-Nov-2024 09:15:01 Europe/Berlin] Login attempt - Raw input: {"email":"abhishekmaurya14112002@gmail.com","password":"12345678abhi"}
+[28-Nov-2024 09:15:01 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in C:\xampp\htdocs\FarmCS\handlers\login_handler.php:63
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\FarmCS\handlers\login_handler.php on line 63
+[28-Nov-2024 09:15:02 Europe/Berlin] Login attempt - Raw input: {"email":"abhishekmaurya14112002@gmail.com","password":"12345678abhi"}
+[28-Nov-2024 09:15:02 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in C:\xampp\htdocs\FarmCS\handlers\login_handler.php:63
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\FarmCS\handlers\login_handler.php on line 63
+[28-Nov-2024 09:15:02 Europe/Berlin] Login attempt - Raw input: {"email":"abhishekmaurya14112002@gmail.com","password":"12345678abhi"}
+[28-Nov-2024 09:15:02 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in C:\xampp\htdocs\FarmCS\handlers\login_handler.php:63
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\FarmCS\handlers\login_handler.php on line 63
+[28-Nov-2024 09:15:02 Europe/Berlin] Login attempt - Raw input: {"email":"abhishekmaurya14112002@gmail.com","password":"12345678abhi"}
+[28-Nov-2024 09:15:02 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in C:\xampp\htdocs\FarmCS\handlers\login_handler.php:63
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\FarmCS\handlers\login_handler.php on line 63
+[28-Nov-2024 09:15:03 Europe/Berlin] Login attempt - Raw input: {"email":"abhishekmaurya14112002@gmail.com","password":"12345678abhi"}
+[28-Nov-2024 09:15:03 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in C:\xampp\htdocs\FarmCS\handlers\login_handler.php:63
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\FarmCS\handlers\login_handler.php on line 63
+[28-Nov-2024 09:15:04 Europe/Berlin] Login attempt - Raw input: {"email":"abhishekmaurya14112002@gmail.com","password":"12345678abhi"}
+[28-Nov-2024 09:15:04 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in C:\xampp\htdocs\FarmCS\handlers\login_handler.php:63
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\FarmCS\handlers\login_handler.php on line 63
+[28-Nov-2024 09:15:04 Europe/Berlin] Login attempt - Raw input: {"email":"abhishekmaurya14112002@gmail.com","password":"12345678abhi"}
+[28-Nov-2024 09:15:04 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in C:\xampp\htdocs\FarmCS\handlers\login_handler.php:63
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\FarmCS\handlers\login_handler.php on line 63
+[28-Nov-2024 09:15:05 Europe/Berlin] Login attempt - Raw input: {"email":"abhishekmaurya14112002@gmail.com","password":"12345678abhi"}
+[28-Nov-2024 09:15:05 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in C:\xampp\htdocs\FarmCS\handlers\login_handler.php:63
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\FarmCS\handlers\login_handler.php on line 63
+[28-Nov-2024 09:15:05 Europe/Berlin] Login attempt - Raw input: {"email":"abhishekmaurya14112002@gmail.com","password":"12345678abhi"}
+[28-Nov-2024 09:15:05 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in C:\xampp\htdocs\FarmCS\handlers\login_handler.php:63
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\FarmCS\handlers\login_handler.php on line 63
+[28-Nov-2024 09:15:05 Europe/Berlin] Login attempt - Raw input: {"email":"abhishekmaurya14112002@gmail.com","password":"12345678abhi"}
+[28-Nov-2024 09:15:05 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in C:\xampp\htdocs\FarmCS\handlers\login_handler.php:63
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\FarmCS\handlers\login_handler.php on line 63
+[28-Nov-2024 09:15:05 Europe/Berlin] Login attempt - Raw input: {"email":"abhishekmaurya14112002@gmail.com","password":"12345678abhi"}
+[28-Nov-2024 09:15:05 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in C:\xampp\htdocs\FarmCS\handlers\login_handler.php:63
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\FarmCS\handlers\login_handler.php on line 63
+[28-Nov-2024 09:15:05 Europe/Berlin] Login attempt - Raw input: {"email":"abhishekmaurya14112002@gmail.com","password":"12345678abhi"}
+[28-Nov-2024 09:15:05 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in C:\xampp\htdocs\FarmCS\handlers\login_handler.php:63
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\FarmCS\handlers\login_handler.php on line 63
+[28-Nov-2024 09:15:13 Europe/Berlin] Login attempt - Raw input: {"email":"abhishekmaurya14112002@gmail.com","password":"12345678abhi"}
+[28-Nov-2024 09:15:13 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in C:\xampp\htdocs\FarmCS\handlers\login_handler.php:63
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\FarmCS\handlers\login_handler.php on line 63
+[28-Nov-2024 09:15:14 Europe/Berlin] Login attempt - Raw input: {"email":"abhishekmaurya14112002@gmail.com","password":"12345678abhi"}
+[28-Nov-2024 09:15:14 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in C:\xampp\htdocs\FarmCS\handlers\login_handler.php:63
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\FarmCS\handlers\login_handler.php on line 63
+[28-Nov-2024 09:17:04 Europe/Berlin] Login attempt - Raw input: {"email":"abhishekmaurya14112002@gmail.com","password":"12345678abhi"}
+[28-Nov-2024 09:17:04 Europe/Berlin] Login attempt for email: abhishekmaurya14112002@gmail.com - User found: No
+[28-Nov-2024 09:17:04 Europe/Berlin] Login failed for email: abhishekmaurya14112002@gmail.com - User not found
+[28-Nov-2024 09:17:04 Europe/Berlin] Login error: Invalid email or password
+[28-Nov-2024 09:17:41 Europe/Berlin] Signup attempt - Raw input: {"firstName":"Abhishek","lastName":"Maurya","email":"abhishekmaurya14112002@gmail.com","password":"12345678abhi","confirmPassword":"12345678abhi","state":"Madhya Pradesh","district":"Dindori","farmType":"livestock","farmSize":"2"}
+[28-Nov-2024 09:17:42 Europe/Berlin] User created successfully: abhishekmaurya14112002@gmail.com
+[28-Nov-2024 09:17:51 Europe/Berlin] Login attempt - Raw input: {"email":"abhishekmaurya14112002@gmail.com","password":"12345678abhi"}
+[28-Nov-2024 09:17:51 Europe/Berlin] Login attempt for email: abhishekmaurya14112002@gmail.com - User found: Yes
+[28-Nov-2024 09:17:51 Europe/Berlin] Login successful for email: abhishekmaurya14112002@gmail.com
+[28-Nov-2024 09:18:11 Europe/Berlin] Login attempt - Raw input: {"email":"abhishekmaurya14112002@gmail.com","password":"12345678abhi"}
+[28-Nov-2024 09:18:11 Europe/Berlin] Login attempt for email: abhishekmaurya14112002@gmail.com - User found: Yes
+[28-Nov-2024 09:18:11 Europe/Berlin] Login successful for email: abhishekmaurya14112002@gmail.com
+[28-Nov-2024 09:25:28 Europe/Berlin] Login attempt - Raw input: {"email":"abhishekmaurya14112002@gmail.com","password":"12345678abhi"}
+[28-Nov-2024 09:25:28 Europe/Berlin] Login attempt for email: abhishekmaurya14112002@gmail.com - User found: Yes
+[28-Nov-2024 09:25:28 Europe/Berlin] Login successful for email: abhishekmaurya14112002@gmail.com
+[28-Nov-2024 09:25:42 Europe/Berlin] Login attempt - Raw input: {"email":"abhishekmaurya14112002@gmail.com","password":"12345678abhi"}
+[28-Nov-2024 09:25:42 Europe/Berlin] Login attempt for email: abhishekmaurya14112002@gmail.com - User found: Yes
+[28-Nov-2024 09:25:42 Europe/Berlin] Login successful for email: abhishekmaurya14112002@gmail.com
+[28-Nov-2024 09:26:10 Europe/Berlin] Login attempt - Raw input: {"email":"abhishekmaurya14112002@gmail.com","password":"12345678abhi"}
+[28-Nov-2024 09:26:10 Europe/Berlin] Login attempt for email: abhishekmaurya14112002@gmail.com - User found: No
+[28-Nov-2024 09:26:10 Europe/Berlin] Login failed for email: abhishekmaurya14112002@gmail.com - User not found
+[28-Nov-2024 09:26:10 Europe/Berlin] Login error: Invalid email or password
+[28-Nov-2024 09:27:05 Europe/Berlin] Signup attempt - Raw input: {"firstName":"Abhishek","lastName":"Maurya","email":"abhishekmaurya14112002@gmail.com","password":"12345678abhi","confirmPassword":"12345678abhi","state":"Madhya Pradesh","district":"Shajapur","farmType":"crop","farmSize":"1"}
+[28-Nov-2024 09:27:06 Europe/Berlin] User created successfully: abhishekmaurya14112002@gmail.com
+[28-Nov-2024 09:28:26 Europe/Berlin] Login attempt - Raw input: {"email":"abhishekmaurya14112002@gmail.com","password":"12345678abhi"}
+[28-Nov-2024 09:28:26 Europe/Berlin] Login attempt for email: abhishekmaurya14112002@gmail.com - User found: Yes
+[28-Nov-2024 09:28:26 Europe/Berlin] Login successful for email: abhishekmaurya14112002@gmail.com
+[28-Nov-2024 09:32:22 Europe/Berlin] Login attempt - Raw input: {"email":"abhishekmaurya14112002@gmail.com","password":"12345678abhi"}
+[28-Nov-2024 09:32:22 Europe/Berlin] Login attempt for email: abhishekmaurya14112002@gmail.com - User found: No
+[28-Nov-2024 09:32:22 Europe/Berlin] Login failed for email: abhishekmaurya14112002@gmail.com - User not found
+[28-Nov-2024 09:32:22 Europe/Berlin] Login error: Invalid email or password
+[28-Nov-2024 09:32:33 Europe/Berlin] Signup attempt - Raw input: {"firstName":"Abhishek","lastName":"Maurya","email":"abhishekmaurya14112002@gmail.com","password":"12345678abhi","confirmPassword":"12345678abhi","state":"Madhya Pradesh","district":"Dindori","farmType":"livestock","farmSize":"3"}
+[28-Nov-2024 09:32:33 Europe/Berlin] User created successfully: abhishekmaurya14112002@gmail.com
+[28-Nov-2024 09:39:37 Europe/Berlin] Login attempt - Raw input: {"email":"abhishekmaurya14112002@gmail.com","password":"12345678abhi"}
+[28-Nov-2024 09:39:38 Europe/Berlin] Login attempt for email: abhishekmaurya14112002@gmail.com - User found: Yes
+[28-Nov-2024 09:39:38 Europe/Berlin] Login successful for email: abhishekmaurya14112002@gmail.com
+[28-Nov-2024 09:39:39 Europe/Berlin] Login attempt - Raw input: {"email":"abhishekmaurya14112002@gmail.com","password":"12345678abhi"}
+[28-Nov-2024 09:39:39 Europe/Berlin] Login attempt for email: abhishekmaurya14112002@gmail.com - User found: Yes
+[28-Nov-2024 09:39:39 Europe/Berlin] Login successful for email: abhishekmaurya14112002@gmail.com
+[28-Nov-2024 09:39:40 Europe/Berlin] Login attempt - Raw input: {"email":"abhishekmaurya14112002@gmail.com","password":"12345678abhi"}
+[28-Nov-2024 09:39:40 Europe/Berlin] Login attempt for email: abhishekmaurya14112002@gmail.com - User found: Yes
+[28-Nov-2024 09:39:40 Europe/Berlin] Login successful for email: abhishekmaurya14112002@gmail.com
+[28-Nov-2024 09:39:41 Europe/Berlin] Login attempt - Raw input: {"email":"abhishekmaurya14112002@gmail.com","password":"12345678abhi"}
+[28-Nov-2024 09:39:41 Europe/Berlin] Login attempt for email: abhishekmaurya14112002@gmail.com - User found: Yes
+[28-Nov-2024 09:39:41 Europe/Berlin] Login successful for email: abhishekmaurya14112002@gmail.com
+[28-Nov-2024 09:39:56 Europe/Berlin] Login attempt - Raw input: {"email":"abhishekmaurya14112002@gmail.com","password":"12345678abhi"}
+[28-Nov-2024 09:39:56 Europe/Berlin] Login attempt for email: abhishekmaurya14112002@gmail.com - User found: No
+[28-Nov-2024 09:39:56 Europe/Berlin] Login failed for email: abhishekmaurya14112002@gmail.com - User not found
+[28-Nov-2024 09:39:56 Europe/Berlin] Login error: Invalid email or password
+[28-Nov-2024 09:40:07 Europe/Berlin] Signup attempt - Raw input: {"firstName":"Abhishek","lastName":"Maurya","email":"abhishekmaurya14112002@gmail.com","password":"12345678abhi","confirmPassword":"12345678abhi","state":"Madhya Pradesh","district":"Dhar","farmType":"livestock","farmSize":"2"}
+[28-Nov-2024 09:40:07 Europe/Berlin] User created successfully: abhishekmaurya14112002@gmail.com
+[28-Nov-2024 09:41:49 Europe/Berlin] Login attempt - Raw input: {"email":"abhishekmaurya14112002@gmail.com","password":"12345678abhi"}
+[28-Nov-2024 09:41:49 Europe/Berlin] Login attempt for email: abhishekmaurya14112002@gmail.com - User found: No
+[28-Nov-2024 09:41:49 Europe/Berlin] Login failed for email: abhishekmaurya14112002@gmail.com - User not found
+[28-Nov-2024 09:41:49 Europe/Berlin] Login error: Invalid email or password
+[28-Nov-2024 09:41:59 Europe/Berlin] Signup attempt - Raw input: {"firstName":"Abhishek","lastName":"Maurya","email":"abhishekmaurya14112002@gmail.com","password":"12345678abhi","confirmPassword":"12345678abhi","state":"Madhya Pradesh","district":"Dindori","farmType":"crop","farmSize":"1"}
+[28-Nov-2024 09:41:59 Europe/Berlin] User created successfully: abhishekmaurya14112002@gmail.com
+[28-Nov-2024 09:46:10 Europe/Berlin] Login attempt - Raw input: {"email":"abhishekmaurya14112002@gmail.com","password":"12345678abhi"}
+[28-Nov-2024 09:46:10 Europe/Berlin] Login attempt for email: abhishekmaurya14112002@gmail.com - User found: No
+[28-Nov-2024 09:46:10 Europe/Berlin] Login failed for email: abhishekmaurya14112002@gmail.com - User not found
+[28-Nov-2024 09:46:10 Europe/Berlin] Login error: Invalid email or password
+[28-Nov-2024 09:46:17 Europe/Berlin] Signup attempt - Raw input: {"firstName":"Abhishek","lastName":"Maurya","email":"abhishekmaurya14112002@gmail.com","password":"12345678abhi","confirmPassword":"12345678abhi","state":"Madhya Pradesh","district":"Dhar","farmType":"crop","farmSize":"1"}
+[28-Nov-2024 09:46:17 Europe/Berlin] User created successfully: abhishekmaurya14112002@gmail.com
+[28-Nov-2024 09:46:30 Europe/Berlin] Login attempt - Raw input: {"email":"abhishekmaurya14112002@gmail.com","password":"12345678abhi"}
+[28-Nov-2024 09:46:30 Europe/Berlin] Login attempt for email: abhishekmaurya14112002@gmail.com - User found: Yes
+[28-Nov-2024 09:46:30 Europe/Berlin] Login successful for email: abhishekmaurya14112002@gmail.com
+[28-Nov-2024 09:46:54 Europe/Berlin] Login attempt - Raw input: {"email":"abhishekmaurya14112002@gmail.com","password":"12345678abhi"}
+[28-Nov-2024 09:46:54 Europe/Berlin] Login attempt for email: abhishekmaurya14112002@gmail.com - User found: Yes
+[28-Nov-2024 09:46:54 Europe/Berlin] Login successful for email: abhishekmaurya14112002@gmail.com
+[28-Nov-2024 10:17:15 Europe/Berlin] Login attempt - Raw input: {"email":"abhishekmaurya14112002@gmail.com","password":"12345678abhi"}
+[28-Nov-2024 10:17:15 Europe/Berlin] Login attempt for email: abhishekmaurya14112002@gmail.com - User found: Yes
+[28-Nov-2024 10:17:15 Europe/Berlin] Login successful for email: abhishekmaurya14112002@gmail.com
+[28-Nov-2024 10:17:47 Europe/Berlin] Login attempt - Raw input: {"email":"abhishekmaurya14112002@gmail.com","password":"12345678abhi"}
+[28-Nov-2024 10:17:47 Europe/Berlin] Login attempt for email: abhishekmaurya14112002@gmail.com - User found: Yes
+[28-Nov-2024 10:17:48 Europe/Berlin] Login successful for email: abhishekmaurya14112002@gmail.com
+[28-Nov-2024 10:21:22 Europe/Berlin] Login attempt - Raw input: {"email":"abhishekmaurya14112002@gmail.com","password":"12345678abhi"}
+[28-Nov-2024 10:21:22 Europe/Berlin] Login attempt for email: abhishekmaurya14112002@gmail.com - User found: No
+[28-Nov-2024 10:21:22 Europe/Berlin] Login failed for email: abhishekmaurya14112002@gmail.com - User not found
+[28-Nov-2024 10:21:22 Europe/Berlin] Login error: Invalid email or password
+[28-Nov-2024 10:25:58 Europe/Berlin] Login attempt - Raw input: {"email":"abhishekmaurya14112002@gmail.com","password":"12345678abhi"}
+[28-Nov-2024 10:25:58 Europe/Berlin] Login attempt for email: abhishekmaurya14112002@gmail.com - User found: No
+[28-Nov-2024 10:25:58 Europe/Berlin] Login failed for email: abhishekmaurya14112002@gmail.com - User not found
+[28-Nov-2024 10:25:58 Europe/Berlin] Login error: Invalid email or password
+[28-Nov-2024 10:27:07 Europe/Berlin] Signup attempt - Raw input: {"firstName":"Abhishek","lastName":"Maurya","email":"abhishekmaurya14112002@gmail.com","password":"12345678abhi","confirmPassword":"12345678abhi","state":"Madhya Pradesh","district":"Dhar","farmType":"crop","farmSize":"234"}
+[28-Nov-2024 10:27:07 Europe/Berlin] User created successfully: abhishekmaurya14112002@gmail.com
+[28-Nov-2024 10:27:50 Europe/Berlin] Login attempt - Raw input: {"email":"abhishekmaurya14112002@gmail.com","password":"12345678abhi"}
+[28-Nov-2024 10:27:50 Europe/Berlin] Login attempt for email: abhishekmaurya14112002@gmail.com - User found: Yes
+[28-Nov-2024 10:27:50 Europe/Berlin] Login successful for email: abhishekmaurya14112002@gmail.com
+[28-Nov-2024 10:28:16 Europe/Berlin] Login attempt - Raw input: {"email":"abhishekmaurya14112002@gmail.com","password":"12345678abhi"}
+[28-Nov-2024 10:28:16 Europe/Berlin] Login attempt for email: abhishekmaurya14112002@gmail.com - User found: Yes
+[28-Nov-2024 10:28:16 Europe/Berlin] Login successful for email: abhishekmaurya14112002@gmail.com
+[28-Nov-2024 10:29:33 Europe/Berlin] Login attempt - Raw input: {"email":"abhishekmaurya14112002@gmail.com","password":"12345678abhi"}
+[28-Nov-2024 10:29:33 Europe/Berlin] Login attempt for email: abhishekmaurya14112002@gmail.com - User found: No
+[28-Nov-2024 10:29:33 Europe/Berlin] Login failed for email: abhishekmaurya14112002@gmail.com - User not found
+[28-Nov-2024 10:29:33 Europe/Berlin] Login error: Invalid email or password
+[28-Nov-2024 10:30:14 Europe/Berlin] Signup attempt - Raw input: {"firstName":"Abhishek","lastName":"Maurya","email":"abhishekmaurya14112002@gmail.com","password":"12345678abhi","confirmPassword":"12345678abhi","state":"Madhya Pradesh","district":"Dhar","farmType":"crop","farmSize":"34564"}
+[28-Nov-2024 10:30:15 Europe/Berlin] User created successfully: abhishekmaurya14112002@gmail.com
+[28-Nov-2024 10:30:35 Europe/Berlin] Login attempt - Raw input: {"email":"abhishekmaurya14112002@gmail.com","password":"12345678abhi"}
+[28-Nov-2024 10:30:35 Europe/Berlin] Login attempt for email: abhishekmaurya14112002@gmail.com - User found: Yes
+[28-Nov-2024 10:30:35 Europe/Berlin] Login successful for email: abhishekmaurya14112002@gmail.com
